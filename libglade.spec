@@ -44,8 +44,8 @@ Static libglade library.
 %setup -q
 
 %build
-automake
 gettextize --copy --force
+LDFLAGS="-s"; export LDFLAGS
 %configure
 make
 
