@@ -11,7 +11,7 @@ Summary(ru):	âÉÂÌÉÏÔÅËÁ libglade ÄÌÑ ÚÁÇÒÕÚËÉ ÉÎÔÅÒÆÅÊÓÏ× ÐÏÌØÚÏ×ÁÔÅÌÑ
 Summary(uk):	â¦ÂÌ¦ÏÔÅËÁ libglade ÄÌÑ ÚÁ×ÁÎÔÁÖÅÎÎÑ ¦ÎÔÅÒÆÅÊÓ¦× ËÏÒÉÓÔÕ×ÁÞÁ
 Name:		libglade
 Version:	0.17
-Release:	13
+Release:	14
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -145,23 +145,21 @@ interface glade.
 ×ÉËÏÒÉÓÔÏ×Õ×ÁÔÉ ÄÌÑ ÒÏÚÒÏÂËÉ ÐÒÏÇÒÁÍ, ÝÏ ÐÏÔÒÅÂÕÀÔØ libglade.
 
 %package gnome
-Summary:	GNOME-dependent libglade libraries
-Summary(pl):	Biblioteki libglade zale¿ne od GNOME
+Summary:	libglade-gnome library
+Summary(pl):	Biblioteka libglade-gnome
 Group:		X11/Libraries
 Requires:	%{name} = %{version}
 Requires:	%{name} >= 1:0.17-10
 
 %description gnome
-GNOME-dependent libglade libraries: libglade-gnome, libglade-bonobo,
-libglade-gnomedb.
+libglade-gnome library.
 
 %description gnome -l pl
-Biblioteki libglade zale¿ne od GNOME: libglade-gnome, libglade-bonobo,
-libglade-gnomedb.
+Biblioteki libglade-gnome.
 
 %package gnome-devel
-Summary:	GNOME-dependent libglade development files
-Summary(pl):	Pliki dla programistów libglade zale¿ne od GNOME
+Summary:	libglade-gnome development files
+Summary(pl):	Pliki dla programistów libglade-gnome
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}
 Requires:	%{name}-devel >= 1:0.17-10
@@ -171,24 +169,103 @@ Requires:	gnome-db-devel
 Requires:	gnome-libs-devel
 
 %description gnome-devel
-GNOME-dependent libglade development files.
+libglade-gnome development files.
 
 %description gnome-devel -l pl
-Pliki dla programistów libglade zale¿ne od GNOME.
+Pliki dla programistów u¿ywaj±cych libglade-gnome.
 
 %package gnome-static
-Summary:	Static GNOME-dependent libglade libraries
-Summary(pl):	Statyczne biblioteki libglade zale¿ne od GNOME
+Summary:	Static libglade-gnome library
+Summary(pl):	Statyczna biblioteka libglade-gnome
 Group:		X11/Development/Libraries
 Requires:	%{name}-gnome-devel = %{version}
+Conflicts:	%{name}-static < 1:0.17-10
 
 %description gnome-static
-Static versions of GNOME-dependent libglade libraries: libglade-gnome,
-libglade-bonobo, libglade-gnomedb.
+Static version of libglade-gnome library.
 
 %description gnome-static -l pl
-Statyczne wersje bibliotek libglade zale¿nych od GNOME:
-libglade-gnome, libglade-bonobo, libglade-gnomedb.
+Statyczna wersja biblioteki libglade-gnome.
+
+%package gnomedb
+Summary:	libglade-gnomedb library
+Summary(pl):	Biblioteka libglade-gnomedb
+Group:		X11/Libraries
+Requires:	%{name}-gnome = %{version}
+Requires:	%{name}-gnome >= 1:0.17-14
+
+%description gnomedb
+libglade-gnomedb library.
+
+%description gnomedb -l pl
+Biblioteka libglade-gnomedb.
+
+%package gnomedb-devel
+Summary:	libglade-gnomedb development files
+Summary(pl):	Pliki dla programistów libglade-gnomedb
+Group:		X11/Development/Libraries
+Requires:	%{name}-gnomedb = %{version}
+Requires:	%{name}-gnome-devel = %{version}
+Requires:	%{name}-gnome-devel >= 1:0.17-14
+
+%description gnomedb-devel
+libglade-gnomedb development files.
+
+%description gnomedb-devel -l pl
+Pliki dla programistów u¿ywaj±cych libglade-gnomedb.
+
+%package gnomedb-static
+Summary:	libglade-gnomedb static library
+Summary(pl):	Statyczna biblioteka libglade-gnomedb
+Group:		X11/Development/Libraries
+Requires:	%{name}-gnomedb-devel = %{version}
+Conflicts:	%{name}-gnome-static < 1:0.17-14
+
+%description gnomedb-static
+Static version of libglade-gnomedb library.
+
+%description gnomedb-static -l pl
+Statyczna wersja biblioteki libglade-gnomedb.
+
+%package bonobo
+Summary:	libglade-bonobo library
+Summary(pl):	Biblioteka libglade-bonobo
+Group:		X11/Libraries
+Requires:	%{name}-gnome = %{version}
+Requires:	%{name}-gnome >= 1:0.17-14
+
+%description bonobo
+libglade-bonobo library.
+
+%description bonobo -l pl
+Biblioteka libglade-bonobo.
+
+%package bonobo-devel
+Summary:	libglade-bonobo development files
+Summary(pl):	Pliki dla programistów libglade-bonobo
+Group:		X11/Development/Libraries
+Requires:	%{name}-bonobo = %{version}
+Requires:	%{name}-gnome-devel = %{version}
+Requires:	%{name}-gnome-devel >= 1:0.17-14
+
+%description bonobo-devel
+libglade-bonobo development files.
+
+%description bonobo-devel -l pl
+Pliki dla programistów u¿ywaj±cych libglade-bonobo.
+
+%package bonobo-static
+Summary:	libglade-bonobo static library
+Summary(pl):	Statyczna biblioteka libglade-bonobo
+Group:		X11/Development/Libraries
+Requires:	%{name}-bonobo-devel = %{version}
+Conflicts:	%{name}-gnome-static < 1:0.17-14
+
+%description bonobo-static
+Static version of libglade-bonobo library.
+
+%description bonobo-static -l pl
+Statyczna wersja biblioteki libglade-bonobo.
 
 %prep
 %setup -q
@@ -235,6 +312,12 @@ rm -rf $RPM_BUILD_ROOT
 %post   gnome -p /sbin/ldconfig
 %postun gnome -p /sbin/ldconfig
 
+%post	gnomedb -p /sbin/ldconfig
+%postun	gnomedb -p /sbin/ldconfig
+
+%post	bonobo -p /sbin/ldconfig
+%postun	bonobo -p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
@@ -260,18 +343,45 @@ rm -rf $RPM_BUILD_ROOT
 %if %{?_without_gnome:0}%{!?_without_gnome:1}
 %files gnome
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libglade-*.so.*.*
+%attr(755,root,root) %{_libdir}/libglade-gnome.so.*.*
 
 %files gnome-devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libglade-*.so
-%attr(755,root,root) %{_libdir}/libglade-*.la
-# here - because it's for gnome-config and version built with gnome
-# is useless when libglade-gnome-devel is not installed
+%attr(755,root,root) %{_libdir}/libglade-gnome.so
+%attr(755,root,root) %{_libdir}/libglade-gnome.la
+# here - because it's for gnome-config and always gives -lglade-gnome
 %attr(755,root,root) %{_libdir}/libgladeConf.sh
-%{_pkgconfigdir}/libglade-*.pc
+%{_pkgconfigdir}/libglade-gnome.pc
 
 %files gnome-static
 %defattr(644,root,root,755)
-%{_libdir}/libglade-*.a
+%{_libdir}/libglade-gnome.a
+
+%files gnomedb
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libglade-gnomedb.so.*.*
+
+%files gnomedb-devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libglade-gnomedb.so
+%attr(755,root,root) %{_libdir}/libglade-gnomedb.la
+%{_pkgconfigdir}/libglade-gnomedb.pc
+
+%files gnomedb-static
+%defattr(644,root,root,755)
+%{_libdir}/libglade-gnomedb.a
+
+%files bonobo
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libglade-bonobo.so.*.*
+
+%files bonobo-devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libglade-bonobo.so
+%attr(755,root,root) %{_libdir}/libglade-bonobo.la
+%{_pkgconfigdir}/libglade-bonobo.pc
+
+%files bonobo-static
+%defattr(644,root,root,755)
+%{_libdir}/libglade-bonobo.a
 %endif
