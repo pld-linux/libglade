@@ -1,11 +1,10 @@
 Summary:	libglade library
 Name:		libglade
-Version:	0.3
-Release:	2
+Version:	0.5
+Release:	1
 Copyright:	LGPL
 Group:		X11/Libraries
 Source:		ftp://ftp.daa.com.au/pub/james/gnome/%{name}-%{version}.tar.gz
-Patch:		libglade-DESTDIR.patch
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libxml-devel
@@ -43,7 +42,6 @@ Static libglade library.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 automake
