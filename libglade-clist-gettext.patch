@@ -1,0 +1,11 @@
+--- libglade-0.17/glade/glade-gtk.c.clist-gettext	Tue Apr 16 10:30:00 2002
++++ libglade-0.17/glade/glade-gtk.c	Tue Apr 16 10:30:48 2002
+@@ -289,7 +289,7 @@
+ 			}
+ 			if (label) {
+ 				gtk_clist_set_column_title (GTK_CLIST(w), col,
+-							    label);
++							    _(label));
+ 				/* get the GtkLabel, which is a child
+ 				 * of the alignment widget used as
+ 				 * title. */

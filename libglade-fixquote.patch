@@ -1,0 +1,11 @@
+--- libglade-0.16/libglade-xgettext.fixquote	Mon Aug 20 12:22:54 2001
++++ libglade-0.16/libglade-xgettext	Mon Aug 20 12:37:59 2001
+@@ -104,6 +104,8 @@
+ 				fp.write(p)
+ 				length = length + 1 + len(p)
+ 			fp.write(' */\n')
++			str = string.replace (str, '\\', '\\\\')
++			str = string.replace (str, '"', '\\"')
+ 			if '\n' in str:
+ 				fp.write('  _(""\n')
+ 				lines = string.split(str, '\n')
