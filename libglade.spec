@@ -6,7 +6,7 @@ Summary(ru):	Библиотека libglade для загрузки интерфейсов пользователя
 Summary(uk):	Б╕бл╕отека libglade для завантаження ╕нтерфейс╕в користувача
 Name:		libglade
 Version:	0.17
-Release:	7
+Release:	8
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -18,14 +18,14 @@ Patch3:		%{name}-fixquote.patch
 Patch4:		%{name}-gnomedb.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
-BuildRequires:	gettext-devel
 BuildRequires:	bison
 BuildRequires:	bonobo-devel >= 0.28
+BuildRequires:	gettext-devel
+BuildRequires:	gnome-db-devel >= 0.2.96
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	libtool
 BuildRequires:	libxml-devel >= 1.7.2
-BuildRequires:	gnome-db-devel >= 0.2.96
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -78,6 +78,10 @@ Summary(ru):	Файлы для разработки программ с использованием libglade
 Summary(uk):	Файли для розробки програм з використанням libglade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
+Requires:	bonobo-devel
+Requires:	gnome-db-devel
+Requires:	gnome-libs-devel
+Requires:	libxml-devel
 
 %description devel
 Libraries, include files, etc you can use to develop libglade
