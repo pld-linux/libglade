@@ -1,7 +1,7 @@
 Summary:	libglade library
 Summary(pl):	Biblioteka do ³adowania definicji interfejsu generowanego programem glade
 Name:		libglade
-Version:	0.13
+Version:	0.14
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
