@@ -58,14 +58,14 @@ Requires:	%{name} = %{version}
 Libraries, include files, etc you can use to develop libglade
 applications.
 
-%description -l es devel
+%description devel -l es
 Archivos de inclusión y bibliotecas necesarias para el desarrollo de
 aplicaciones con glade.
 
-%description -l pl devel
+%description devel -l pl
 Biblioteki, pliki nag³ówkowe i dokumentacja dla programisty.
 
-%description -l pt_BR devel
+%description devel -l pt_BR
 Arquivos de inclusão e bibliotecas para o desenvolvimento de
 aplicações com a interface glade.
 
@@ -80,14 +80,14 @@ Requires:	%{name}-devel = %{version}
 %description static
 Static libglade library.
 
-%description -l es static
+%description static -l es
 Archivos estáticos necesarias para el desarrollo de aplicaciones con
 glade.
 
-%description -l pl static
+%description static -l pl
 Biblioteka statyczna libglade.
 
-%description -l pt_BR static
+%description static -l pt_BR
 Bibliotecas estáticas para o desenvolvimento de aplicações com a
 interface glade.
 
