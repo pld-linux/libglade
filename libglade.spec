@@ -29,7 +29,7 @@ BuildRequires:	automake
 BuildRequires:	bison
 %{!?_without_gnome:BuildRequires:	bonobo-devel >= 0.28}
 BuildRequires:	gettext-devel
-%{!?_without_gnome:BuildRequires:	gnome-db-devel >= 0.2.96}
+%{!?_without_gnome:BuildRequires:	gnome-db1-devel >= 0.2.96}
 %{!?_without_gnome:BuildRequires:	gnome-libs-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	gtk-doc
