@@ -329,7 +329,7 @@ rm -rf $RPM_BUILD_ROOT
 # GNOME-dependent libs), but it doesn't break things like libgladeConf.sh do
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/libglade.so
-%attr(755,root,root) %{_libdir}/libglade.la
+%{_libdir}/libglade.la
 %{_pkgconfigdir}/libglade.pc
 %{_includedir}/libglade-1.0
 %{_aclocaldir}/*
@@ -348,7 +348,7 @@ rm -rf $RPM_BUILD_ROOT
 %files gnome-devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libglade-gnome.so
-%attr(755,root,root) %{_libdir}/libglade-gnome.la
+%{_libdir}/libglade-gnome.la
 # here - because it's for gnome-config and always gives -lglade-gnome
 %attr(755,root,root) %{_libdir}/libgladeConf.sh
 %{_pkgconfigdir}/libglade-gnome.pc
@@ -364,7 +364,7 @@ rm -rf $RPM_BUILD_ROOT
 %files gnomedb-devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libglade-gnomedb.so
-%attr(755,root,root) %{_libdir}/libglade-gnomedb.la
+%{_libdir}/libglade-gnomedb.la
 %{_pkgconfigdir}/libglade-gnomedb.pc
 
 %files gnomedb-static
@@ -378,7 +378,7 @@ rm -rf $RPM_BUILD_ROOT
 %files bonobo-devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libglade-bonobo.so
-%attr(755,root,root) %{_libdir}/libglade-bonobo.la
+%{_libdir}/libglade-bonobo.la
 %{_pkgconfigdir}/libglade-bonobo.pc
 
 %files bonobo-static
