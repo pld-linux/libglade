@@ -1,0 +1,47 @@
+diff -urN libglade-0.17.old/glade/glade-gnomedb.c libglade-0.17/glade/glade-gnomedb.c
+--- libglade-0.17.old/glade/glade-gnomedb.c	Tue Feb 13 10:36:16 2001
++++ libglade-0.17/glade/glade-gnomedb.c	Sat Mar  9 03:30:21 2002
+@@ -28,6 +28,7 @@
+ #include <string.h>
+ #include <glade/glade-build.h>
+ #include <glade/glade-private.h>
++#include <glade/glade.h>
+ #include <gnome.h>
+ #include <bonobo.h>
+ #include <gnome-db.h>
+@@ -44,7 +45,7 @@
+ {
+ 	GtkWidget *wid;
+      
+-	wid = gnome_db_login_new (NULL, NULL, NULL);
++	wid = gnome_db_login_new (NULL);
+      
+ 	return wid;
+ }
+@@ -55,7 +56,7 @@
+ 	GtkWidget *wid = NULL;
+ 	GtkWidget *wid2 = NULL;
+      
+-	wid2 = gnome_db_login_new (NULL,NULL,NULL);
++	wid2 = gnome_db_login_new (NULL);
+           
+ 	wid = gnome_db_logindlg_new (GNOME_DB_LOGIN (wid2), NULL);
+      
+@@ -150,7 +151,7 @@
+ {
+ 	GtkWidget *wid;
+        
+-	wid = gnome_db_error_new (NULL);
++	wid = gnome_db_error_new ();
+      
+ 	return (wid);
+ }
+@@ -160,7 +161,7 @@
+ {
+ 	GtkWidget *wid;
+        
+-	wid = gnome_db_errordlg_new (NULL, NULL);
++	wid = gnome_db_error_dialog_new (NULL);
+      
+ 	return (wid);
+ }
