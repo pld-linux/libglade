@@ -1,9 +1,11 @@
 Summary:	libglade library
+Summary(pl):	Biblioteka do ³adowania definicji interfejsu generowanego programem glade
 Name:		libglade
-Version:	0.9
+Version:	0.11
 Release:	1
-Copyright:	LGPL
+License:	LGPL
 Group:		X11/Libraries
+Group(pl):	X11/Biblioteki
 Source:		ftp://ftp.daa.com.au/pub/james/gnome/%{name}-%{version}.tar.gz
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.0
@@ -17,25 +19,39 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 %description
 This library allows you to load user interfaces in your program, which are
 stored externally. This allows alteration of the interface without
-recompilation of the program.
+recompilation of the program. The interfaces can also be edited with
+GLADE.
 
-The interfaces can also be edited with GLADE.
+%description -l pl
+Biblioteka libglade umo¿liwia dynamiczne ³adowanie definicji interfejsu
+u¿ytkownika generowanego za pomoc± programu glade. Taka separacja definicji
+interfrejsu umozliwia placê nad nim bez konieczno¶ci rekompilacji programu.
 
 %package devel
 Summary:	Libraries, includes, etc to develop libglade applications
-Group:		X11/Libraries
+Summary(pl):	Biblioteki, pliki nag³ówkowe i dokumentacja dla programisty
+Group:		X11/Development/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
 Libraries, include files, etc you can use to develop libglade applications.
 
+%description -l pl devel
+Biblioteki, pliki nag³ówkowe i dokumentacja dla programisty.
+
 %package static
 Summary:	Static libglade library
+Summary(pl):	Biblioteka statyczna libglade
 Group:		X11/Development/Libraries
+Group(pl):	X11/Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description static
 Static libglade library.
+
+%description -l pl static
+Biblioteka statyczna libglade.
 
 %prep
 %setup -q
