@@ -1,6 +1,7 @@
 #
 # Conditional build:
-# _without_gnome	- without gnome/gnomedb/bonobo support
+# _without_gnome	- without gnome package (gnome/gnomedb/bonobo libs)
+#			  and w/o gnome/gnomedb/bonobo support in libglade-config
 #
 Summary:	libglade library
 Summary(es):	El libglade permite que usted cargue archivos del interfaz del glade
@@ -10,7 +11,7 @@ Summary(ru):	Библиотека libglade для загрузки интерфейсов пользователя
 Summary(uk):	Б╕бл╕отека libglade для завантаження ╕нтерфейс╕в користувача
 Name:		libglade
 Version:	0.17
-Release:	9
+Release:	10
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -21,6 +22,7 @@ Patch2:		%{name}-clist-gettext.patch
 Patch3:		%{name}-fixquote.patch
 Patch4:		%{name}-gnomedb.patch
 Patch5:		%{name}-nognome.patch
+URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
@@ -32,7 +34,6 @@ BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	gtk-doc
 BuildRequires:	libtool
 BuildRequires:	libxml-devel >= 1.7.2
-URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -85,9 +86,6 @@ Summary(ru):	Файлы для разработки программ с использованием libglade
 Summary(uk):	Файли для розробки програм з використанням libglade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-%{!?_without_gnome:Requires:	bonobo-devel}
-%{!?_without_gnome:Requires:	gnome-db-devel}
-%{!?_without_gnome:Requires:	gnome-libs-devel}
 Requires:	gtk-doc-common
 Requires:	libxml-devel
 
@@ -146,6 +144,50 @@ interface glade.
 Пакет libglade-devel-static м╕стить статичн╕ б╕бл╕отеки, як╕ можна
 використовувати для розробки програм, що потребують libglade.
 
+%package gnome
+Summary:	GNOME-dependent libglade libraries
+Summary(pl):	Biblioteki libglade zale©ne od GNOME
+Group:		X11/Libraries
+Requires:	%{name} = %{version}
+
+%description gnome
+GNOME-dependent libglade libraries: libglade-gnome, libglade-bonobo,
+libglade-gnomedb.
+
+%description gnome -l pl
+Biblioteki libglade zale©ne od GNOME: libglade-gnome, libglade-bonobo,
+libglade-gnomedb.
+
+%package gnome-devel
+Summary:	GNOME-dependent libglade development files
+Summary(pl):	Pliki dla programistСw libglade zale©ne od GNOME
+Group:		X11/Development/Libraries
+Requires:	%{name}-devel = %{version}
+Requires:	%{name}-gnome = %{version}
+Requires:	bonobo-devel
+Requires:	gnome-db-devel
+Requires:	gnome-libs-devel
+
+%description gnome-devel
+GNOME-dependent libglade development files.
+
+%description gnome-devel -l pl
+Pliki dla programistСw libglade zale©ne od GNOME.
+
+%package gnome-static
+Summary:	Static GNOME-dependent libglade libraries
+Summary(pl):	Statyczne biblioteki libglade zale©ne od GNOME
+Group:		X11/Development/Libraries
+Requires:	%{name}-gnome-devel = %{version}
+
+%description gnome-static
+Static versions of GNOME-dependent libglade libraries: libglade-gnome,
+libglade-bonobo, libglade-gnomedb.
+
+%description gnome-static -l pl
+Statyczne wersje bibliotek libglade zale©nych od GNOME:
+libglade-gnome, libglade-bonobo, libglade-gnomedb.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -189,15 +231,16 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libglade.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
+# libglade-config is different when building with gnome (contains support for
+# GNOME-dependent libs), but it doesn't break things like libgladeConf.sh do
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/libgladeConf.sh
-%attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
-%{_pkgconfigdir}/*
+%attr(755,root,root) %{_libdir}/libglade.so
+%attr(755,root,root) %{_libdir}/libglade.la
+%{_pkgconfigdir}/libglade.pc
 %{_includedir}/libglade-1.0
 %{_aclocaldir}/*
 %{_gtkdocdir}/*
@@ -205,4 +248,23 @@ rm -rf $RPM_BUILD_ROOT
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libglade.a
+
+%if %{?_without_gnome:0}%{!?_without_gnome:1}
+%files gnome
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libglade-*.so.*.*
+
+%files gnome-devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libglade-*.so
+%attr(755,root,root) %{_libdir}/libglade-*.la
+# here - because it's for gnome-config and version built with gnome
+# is useless when libglade-gnome-devel is not installed
+%attr(755,root,root) %{_libdir}/libgladeConf.sh
+%{_pkgconfigdir}/libglade-*.pc
+
+%files gnome-static
+%defattr(644,root,root,755)
+%{_libdir}/libglade-*.a
+%endif
