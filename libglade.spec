@@ -11,7 +11,7 @@ Summary(ru):	Библиотека libglade для загрузки интерфейсов пользователя
 Summary(uk):	Б╕бл╕отека libglade для завантаження ╕нтерфейс╕в користувача
 Name:		libglade
 Version:	0.17
-Release:	12
+Release:	13
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -149,6 +149,7 @@ Summary:	GNOME-dependent libglade libraries
 Summary(pl):	Biblioteki libglade zale©ne od GNOME
 Group:		X11/Libraries
 Requires:	%{name} = %{version}
+Requires:	%{name} >= 1:0.17-10
 
 %description gnome
 GNOME-dependent libglade libraries: libglade-gnome, libglade-bonobo,
@@ -163,6 +164,7 @@ Summary:	GNOME-dependent libglade development files
 Summary(pl):	Pliki dla programistСw libglade zale©ne od GNOME
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel >= 1:0.17-10
 Requires:	%{name}-gnome = %{version}
 Requires:	bonobo-devel
 Requires:	gnome-db-devel
