@@ -1,98 +1,96 @@
-# Note that this is NOT a relocatable package
-%define name	libglade
-%define ver	0.3
-%define RELEASE 1
-%define rel     %{?CUSTOM_RELEASE} %{!?CUSTOM_RELEASE:%RELEASE}
-%define prefix	/usr
+Summary:	libglade library
+Name:		libglade
+Version:	0.3
+Release:	2
+Copyright:	LGPL
+Group:		X11/Libraries
+Source:		ftp://ftp.daa.com.au/pub/james/gnome/%{name}-%{version}.tar.gz
+Patch:		libglade-DESTDIR.patch
+BuildRequires:	gnome-libs-devel
+BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	libxml-devel
+BuildRequires:	XFree86-devel
+URL:		http://www.gnome.org
+BuildRoot:	/tmp/%{name}-%{version}-root
 
-Summary: libglade library
-Name: %name
-Version: %ver
-Release: %rel
-Copyright: LGPL
-Group: X11/Libraries
-Source: ftp://ftp.daa.com.au/pub/james/gnome/libglade-%{ver}.tar.gz
-BuildRoot: /var/tmp/%{name}-root
-Packager: James Henstridge
-URL: http://www.gnome.org
-Docdir: %{prefix}/doc
+%define		_prefix		/usr/X11R6
 
 Requires: gtk+
 Requires: libxml >= 1.3
 
 %description
 This library allows you to load user interfaces in your program, which are
-stored externally.  This allows alteration of the interface without
+stored externally. This allows alteration of the interface without
 recompilation of the program.
 
 The interfaces can also be edited with GLADE.
 
 %package devel
-Summary: Libraries, includes, etc to develop libglade applications
-Group: X11/libraries
-Requires: libglade gtk+-devel libxml-devel
+Summary:	Libraries, includes, etc to develop libglade applications
+Group:		X11/Libraries
+Requires:	%{name} = %{version}
 
 %description devel
 Libraries, include files, etc you can use to develop libglade applications.
 
+%package static
+Summary:	Static libglade library
+Group:		X11/Development/Libraries
+Requires:	%{name} = %{version}
 
-%changelog
-
-* Sun Nov  1 1998 James Henstridge <james@daa.com.au>
-
-- Updated the dependencies of the devel package, so users must have gtk+-devel.
-
-* Sun Oct 25 1998 James Henstridge <james@daa.com.au>
-
-- Initial release 0.0.1
+%description static
+Static libglade library.
 
 %prep
-%setup
+%setup -q
+%patch -p1
 
 %build
-# Needed for snapshot releases.
-if [ ! -f configure ]; then
-  CFLAGS="$RPM_OPT_FLAGS" ./autogen.sh --prefix=%prefix 
-else
-  CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%prefix 
-fi
-
-if [ "$SMP" != "" ]; then
-  (make "MAKE=make -k -j $SMP"; exit 0)
-  make
-else
-  make
-fi
+automake
+gettextize --copy --force
+%configure
+make
 
 %install
-[ -n "$RPM_BUILD_ROOT" -a "$RPM_BUILD_ROOT" != / ] && rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}
 
-make prefix=$RPM_BUILD_ROOT%{prefix} install
+make install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	m4datadir=/usr/share/aclocal
 
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
-%clean
-[ -n "$RPM_BUILD_ROOT" -a "$RPM_BUILD_ROOT" != / ] && rm -rf $RPM_BUILD_ROOT
+gzip -9nf AUTHORS ChangeLog NEWS README
 
-%post -p /sbin/ldconfig
+install test-libglade.c *.glade $RPM_BUILD_ROOT/usr/src/examples/%{name}
 
+%find_lang %{name}
+
+%post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%files
-%defattr(-, root, root)
+%clean
+rm -rf $RPM_BUILD_ROOT
 
-%doc AUTHORS ChangeLog NEWS README COPYING
-%{prefix}/lib/lib*.so.*
+%files -f %{name}.lang
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
-%defattr(-, root, root)
+%defattr(644,root,root,755)
+%doc *gz
+%docdir %{_datadir}/gnome/html/libglade
+%doc %{_datadir}/gnome/html/libglade/*
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/libgladeConf.sh
+%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
+%{_includedir}/glade
 
-%{prefix}/bin/*
-%{prefix}/lib/lib*.so
-%{prefix}/lib/*a
-%{prefix}/include/glade/*
-%{prefix}/share/aclocal/*
-%{prefix}/lib/libgladeConf.sh
+/usr/share/aclocal/*
 
-%doc test-libglade.c
-%doc *.glade
-%doc %{prefix}/share/gnome/html/libglade/*
+/usr/src/examples/%{name}
+
+%files static
+%attr(644,root,root) %{_libdir}/lib*.a
