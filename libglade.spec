@@ -8,17 +8,22 @@ License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
 Group(es):	X11/Bibliotecas
+Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
+Group(pt_BR):	X11/Bibliotecas
+Group(ru):	X11/Библиотеки
+Group(uk):	X11/Б╕бл╕отеки
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/libglade/%{name}-%{version}.tar.gz
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
+BuildRequires:	gettext-devel
 BuildRequires:	bison
 BuildRequires:	bonobo-devel >= 0.28
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libxml-devel >= 1.7.2
-BuildRequires:	libtool
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -41,7 +46,12 @@ Summary:	Libraries, includes, etc to develop libglade applications
 Summary(pl):	Biblioteki, pliki nagЁСwkowe i dokumentacja dla programisty
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
+Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/Разработка/Библиотеки
+Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -56,7 +66,12 @@ Summary:	Static libglade library
 Summary(pl):	Biblioteka statyczna libglade
 Group:		X11/Development/Libraries
 Group(de):	X11/Entwicklung/Libraries
+Group(es):	X11/Desarrollo/Bibliotecas
+Group(fr):	X11/Development/Librairies
 Group(pl):	X11/Programowanie/Biblioteki
+Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
+Group(ru):	X11/Разработка/Библиотеки
+Group(uk):	X11/Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description static
@@ -93,11 +108,11 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 
 install test-libglade.c *.glade $RPM_BUILD_ROOT/usr/src/examples/%{name}
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
