@@ -11,7 +11,7 @@ Summary(ru):	Библиотека libglade для загрузки интерфейсов пользователя
 Summary(uk):	Б╕бл╕отека libglade для завантаження ╕нтерфейс╕в користувача
 Name:		libglade
 Version:	0.17
-Release:	10
+Release:	11
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -227,6 +227,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
+
+%post   gnome -p /sbin/ldconfig
+%postun gnome -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
