@@ -19,7 +19,7 @@ Summary(ru):	Библиотека libglade для загрузки интерфейсов пользователя
 Summary(uk):	Б╕бл╕отека libglade для завантаження ╕нтерфейс╕в користувача
 Name:		libglade
 Version:	0.17
-Release:	18
+Release:	19
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -31,13 +31,13 @@ Patch2:		%{name}-clist-gettext.patch
 Patch3:		%{name}-fixquote.patch
 Patch4:		%{name}-gnomedb.patch
 Patch5:		%{name}-nognome.patch
-Patch6:		%{name}-ac.patch
+Patch6:		%{name}-am18.patch
 URL:		http://www.gnome.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	bison
 %{?with_bonobo:BuildRequires:	bonobo-devel >= 0.28}
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-devel >= 0.11.5
 %{?with_gnomedb:BuildRequires:	gnome-db-devel >= 0.2.96}
 %{?with_gnome:BuildRequires:	gnome-libs-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
