@@ -2,9 +2,11 @@ Summary:	libglade library
 Summary(es):	El libglade permite que usted cargue archivos del interfaz del glade
 Summary(pl):	Biblioteka do Ёadowania definicji interfejsu generowanego programem glade
 Summary(pt_BR):	Esta biblioteca permite carregar arquivos da interface glade
+Summary(ru):	Библиотека libglade для загрузки интерфейсов пользователя
+Summary(uk):	Б╕бл╕отека libglade для завантаження ╕нтерфейс╕в користувача
 Name:		libglade
 Version:	0.17
-Release:	5
+Release:	7
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -30,10 +32,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix		/usr/X11R6
 
 %description
-This library allows you to load user interfaces in your program, which
-are stored externally. This allows alteration of the interface without
-recompilation of the program. The interfaces can also be edited with
-GLADE.
+The libglade library allows you to load user interfaces which are
+stored externally into your program. This allows for alteration of the
+interface without recompilation of the program. The interfaces can
+also be edited with GLADE. Currently libglade supports all of the
+widgets in current releases, keyboard accelerators and automatic
+signal connection.
 
 %description -l es
 El libglade permite que usted cargue archivos del interfaz del glade
@@ -50,11 +54,28 @@ O libglade permite carregar, em tempo de execuГЦo, arquivos da
 interface glade. NЦo И necessАrio ter o glade instalado, mas esta И a
 melhor maneira de criar os arquivos de interface.
 
+%description -l ru
+Библиотека libglade позволяет загружать в вашу програму интерфейсы
+пользователя, хранящиеся во внешнем файле. Это позволяет менять
+интерфейс без перекомпиляции программы. Интерфейсы могут также
+редактироваться при помощи GLADE. Сейчас libglade поддерживает все
+виджеты, клавиатурные акселераторы и автоматическое сигнальное
+соединение.
+
+%description -l uk
+Б╕бл╕отека libglade дозволя╓ завантажувати в вашу програму ╕нтерфейси
+користувача, що збер╕гаються в зовн╕шньому файл╕. Це дозволя╓
+зм╕нювати ╕нтерфейс без перекомп╕ляц╕╖ програми. ╤нтерфейси можуть
+також редагуватися за допомогою GLADE. Нараз╕ libglade п╕дтриму╓ вс╕
+в╕джети, клав╕атурн╕ акселератори та автоматичне сигнальне з'╓днання.
+
 %package devel
 Summary:	Libraries, includes, etc to develop libglade applications
 Summary(es):	Archivos necesarios para el desarrollo de aplicaciones con libglade
 Summary(pl):	Biblioteki, pliki nagЁСwkowe i dokumentacja dla programisty
 Summary(pt_BR):	Arquivos necessАrios para o desenvolvimento de aplicaГУes com a interface glade
+Summary(ru):	Файлы для разработки программ с использованием libglade
+Summary(uk):	Файли для розробки програм з використанням libglade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 
@@ -73,11 +94,21 @@ Biblioteki, pliki nagЁСwkowe i dokumentacja dla programisty.
 Arquivos de inclusЦo e bibliotecas para o desenvolvimento de
 aplicaГУes com a interface glade.
 
+%description devel -l ru
+Пакет libglade-devel содержит файлы, необходимые для разработки
+програм, использующих libglade.
+
+%description devel -l uk
+Пакет libglade-devel м╕стить файли, необх╕дн╕ для розробки програм, що
+використовують libglade.
+
 %package static
 Summary:	Static libglade library
 Summary(es):	Archivos estАticos necesarios para el desarrollo de aplicaciones con libglade
 Summary(pl):	Biblioteka statyczna libglade
 Summary(pt_BR):	Arquivos estАticos necessАrios para o desenvolvimento de aplicaГУes com a interface glade
+Summary(ru):	Статические библиотеки для разработки програм с использованием libglade
+Summary(uk):	Статичн╕ б╕бл╕отеки для розробки програм з використанням libglade
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}
 
@@ -94,6 +125,14 @@ Biblioteka statyczna libglade.
 %description static -l pt_BR
 Bibliotecas estАticas para o desenvolvimento de aplicaГУes com a
 interface glade.
+
+%description static -l ru
+Пакет libglade-devel-static содержит статичнские библиотеки, которые
+можно использовать для разработки програм, требующих libglade.
+
+%description static -l uk
+Пакет libglade-devel-static м╕стить статичн╕ б╕бл╕отеки, як╕ можна
+використовувати для розробки програм, що потребують libglade.
 
 %prep
 %setup -q
@@ -149,7 +188,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/*
 %{_includedir}/libglade-1.0
 %{_aclocaldir}/*
-
 
 %files static
 %defattr(644,root,root,755)
