@@ -1,0 +1,10 @@
+--- libglade-0.17/configure.in~	Fri Nov 22 06:10:23 2002
++++ libglade-0.17/configure.in	Fri Nov 22 06:10:47 2002
+@@ -97,7 +97,6 @@
+ libglade.spec
+ macros/Makefile
+ intl/Makefile
+-po/Makefile.in
+ glade/Makefile
+ doc/Makefile
+ libglade-config
