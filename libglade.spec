@@ -204,7 +204,7 @@ rm -f missing
 %{__libtoolize}
 %{__gettextize}
 touch po/POTFILES.in
-aclocal -I macros
+%{__aclocal} -I macros
 %{__autoconf}
 %{__automake}
 %configure \
