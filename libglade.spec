@@ -94,7 +94,7 @@ Summary(pt_BR):	Arquivos necessários para o desenvolvimento de aplicações com a 
 Summary(ru):	æÁÊÌÙ ÄÌÑ ÒÁÚÒÁÂÏÔËÉ ÐÒÏÇÒÁÍÍ Ó ÉÓÐÏÌØÚÏ×ÁÎÉÅÍ libglade
 Summary(uk):	æÁÊÌÉ ÄÌÑ ÒÏÚÒÏÂËÉ ÐÒÏÇÒÁÍ Ú ×ÉËÏÒÉÓÔÁÎÎÑÍ libglade
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 Requires:	gtk-doc-common
 Requires:	libxml-devel
 
@@ -129,7 +129,7 @@ Summary(pt_BR):	Arquivos estáticos necessários para o desenvolvimento de aplicaç
 Summary(ru):	óÔÁÔÉÞÅÓËÉÅ ÂÉÂÌÉÏÔÅËÉ ÄÌÑ ÒÁÚÒÁÂÏÔËÉ ÐÒÏÇÒÁÍ Ó ÉÓÐÏÌØÚÏ×ÁÎÉÅÍ libglade
 Summary(uk):	óÔÁÔÉÞÎ¦ Â¦ÂÌ¦ÏÔÅËÉ ÄÌÑ ÒÏÚÒÏÂËÉ ÐÒÏÇÒÁÍ Ú ×ÉËÏÒÉÓÔÁÎÎÑÍ libglade
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{epoch}:%{version}
 
 %description static
 Static libglade library.
@@ -157,7 +157,7 @@ interface glade.
 Summary:	libglade-gnome library
 Summary(pl):	Biblioteka libglade-gnome
 Group:		X11/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 Requires:	%{name} >= 1:0.17-10
 
 %description gnome
@@ -170,9 +170,9 @@ Biblioteki libglade-gnome.
 Summary:	libglade-gnome development files
 Summary(pl):	Pliki dla programistów libglade-gnome
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{epoch}:%{version}
 Requires:	%{name}-devel >= 1:0.17-10
-Requires:	%{name}-gnome = %{version}
+Requires:	%{name}-gnome = %{epoch}:%{version}
 Requires:	gnome-libs-devel
 
 %description gnome-devel
@@ -185,7 +185,7 @@ Pliki dla programistów u¿ywaj±cych libglade-gnome.
 Summary:	Static libglade-gnome library
 Summary(pl):	Statyczna biblioteka libglade-gnome
 Group:		X11/Development/Libraries
-Requires:	%{name}-gnome-devel = %{version}
+Requires:	%{name}-gnome-devel = %{epoch}:%{version}
 Conflicts:	%{name}-static < 1:0.17-10
 
 %description gnome-static
@@ -198,7 +198,7 @@ Statyczna wersja biblioteki libglade-gnome.
 Summary:	libglade-gnomedb library
 Summary(pl):	Biblioteka libglade-gnomedb
 Group:		X11/Libraries
-Requires:	%{name}-gnome = %{version}
+Requires:	%{name}-gnome = %{epoch}:%{version}
 Requires:	%{name}-gnome >= 1:0.17-14
 
 %description gnomedb
@@ -212,8 +212,8 @@ Summary:	libglade-gnomedb development files
 Summary(pl):	Pliki dla programistów libglade-gnomedb
 Group:		X11/Development/Libraries
 Requires:	gnome-db-devel
-Requires:	%{name}-gnomedb = %{version}
-Requires:	%{name}-gnome-devel = %{version}
+Requires:	%{name}-gnomedb = %{epoch}:%{version}
+Requires:	%{name}-gnome-devel = %{epoch}:%{version}
 Requires:	%{name}-gnome-devel >= 1:0.17-14
 
 %description gnomedb-devel
@@ -226,7 +226,7 @@ Pliki dla programistów u¿ywaj±cych libglade-gnomedb.
 Summary:	libglade-gnomedb static library
 Summary(pl):	Statyczna biblioteka libglade-gnomedb
 Group:		X11/Development/Libraries
-Requires:	%{name}-gnomedb-devel = %{version}
+Requires:	%{name}-gnomedb-devel = %{epoch}:%{version}
 Conflicts:	%{name}-gnome-static < 1:0.17-14
 
 %description gnomedb-static
@@ -239,7 +239,7 @@ Statyczna wersja biblioteki libglade-gnomedb.
 Summary:	libglade-bonobo library
 Summary(pl):	Biblioteka libglade-bonobo
 Group:		X11/Libraries
-Requires:	%{name}-gnome = %{version}
+Requires:	%{name}-gnome = %{epoch}:%{version}
 Requires:	%{name}-gnome >= 1:0.17-14
 
 %description bonobo
@@ -253,8 +253,8 @@ Summary:	libglade-bonobo development files
 Summary(pl):	Pliki dla programistów libglade-bonobo
 Group:		X11/Development/Libraries
 Requires:	bonobo-devel
-Requires:	%{name}-bonobo = %{version}
-Requires:	%{name}-gnome-devel = %{version}
+Requires:	%{name}-bonobo = %{epoch}:%{version}
+Requires:	%{name}-gnome-devel = %{epoch}:%{version}
 Requires:	%{name}-gnome-devel >= 1:0.17-14
 
 %description bonobo-devel
@@ -267,7 +267,7 @@ Pliki dla programistów u¿ywaj±cych libglade-bonobo.
 Summary:	libglade-bonobo static library
 Summary(pl):	Statyczna biblioteka libglade-bonobo
 Group:		X11/Development/Libraries
-Requires:	%{name}-bonobo-devel = %{version}
+Requires:	%{name}-bonobo-devel = %{epoch}:%{version}
 Conflicts:	%{name}-gnome-static < 1:0.17-14
 
 %description bonobo-static
