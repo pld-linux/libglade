@@ -4,7 +4,7 @@ Summary(pl):	Biblioteka do ³adowania definicji interfejsu generowanego programem
 Summary(pt_BR):	Esta biblioteca permite carregar arquivos da interface glade
 Name:		libglade
 Version:	0.17
-Release:	3
+Release:	4
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -102,9 +102,10 @@ libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
 autoconf
-automake -a -c
+automake -a -c -f
 %configure \
-	--enable-bonobo
+	--enable-bonobo \
+	--disable-gnomedb
 %{__make}
 
 %install
