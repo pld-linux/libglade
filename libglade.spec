@@ -69,6 +69,7 @@ Biblioteka statyczna libglade.
 %patch0 -p1
 
 %build
+libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
 autoconf
