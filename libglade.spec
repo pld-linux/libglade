@@ -1,3 +1,7 @@
+#
+# Conditional build:
+# _without_gnome	- without gnome/gnomedb/bonobo support
+#
 Summary:	libglade library
 Summary(es):	El libglade permite que usted cargue archivos del interfaz del glade
 Summary(pl):	Biblioteka do Ёadowania definicji interfejsu generowanego programem glade
@@ -6,7 +10,7 @@ Summary(ru):	Библиотека libglade для загрузки интерфейсов пользователя
 Summary(uk):	Б╕бл╕отека libglade для завантаження ╕нтерфейс╕в користувача
 Name:		libglade
 Version:	0.17
-Release:	8
+Release:	9
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -16,20 +20,23 @@ Patch1:		%{name}-gtkdoc-scanobj-nogtkinit.patch
 Patch2:		%{name}-clist-gettext.patch
 Patch3:		%{name}-fixquote.patch
 Patch4:		%{name}-gnomedb.patch
+Patch5:		%{name}-nognome.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
-BuildRequires:	bonobo-devel >= 0.28
+%{!?_without_gnome:BuildRequires:	bonobo-devel >= 0.28}
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-db-devel >= 0.2.96
-BuildRequires:	gnome-libs-devel
+%{!?_without_gnome:BuildRequires:	gnome-db-devel >= 0.2.96}
+%{!?_without_gnome:BuildRequires:	gnome-libs-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	gtk-doc
 BuildRequires:	libtool
 BuildRequires:	libxml-devel >= 1.7.2
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
+%define		_gtkdocdir	%{_defaultdocdir}/gtk-doc/html
 
 %description
 The libglade library allows you to load user interfaces which are
@@ -78,9 +85,10 @@ Summary(ru):	Файлы для разработки программ с использованием libglade
 Summary(uk):	Файли для розробки програм з використанням libglade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	bonobo-devel
-Requires:	gnome-db-devel
-Requires:	gnome-libs-devel
+%{!?_without_gnome:Requires:	bonobo-devel}
+%{!?_without_gnome:Requires:	gnome-db-devel}
+%{!?_without_gnome:Requires:	gnome-libs-devel}
+Requires:	gtk-doc-common
 Requires:	libxml-devel
 
 %description devel
@@ -145,17 +153,19 @@ interface glade.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 %build
 rm -f missing
 %{__libtoolize}
 %{__gettextize}
+touch po/POTFILES.in
 aclocal -I macros
 %{__autoconf}
 %{__automake}
 %configure \
-	--enable-bonobo \
-	--enable-gnomedb
+	%{!?_without_gnome:--enable-bonobo --enable-gnomedb} \
+	%{?_without_gnome:--without-gnome}
 %{__make}
 
 %install
@@ -165,7 +175,8 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	m4datadir=%{_aclocaldir} \
-	pkgconfigdir=%{_pkgconfigdir}
+	pkgconfigdir=%{_pkgconfigdir} \
+	HTML_DIR=%{_gtkdocdir}
 
 install test-libglade.c *.glade $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
@@ -182,9 +193,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%docdir %{_datadir}/gnome/html/libglade
-%doc %{_datadir}/gnome/html/libglade/*
-%doc %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/libgladeConf.sh
 %attr(755,root,root) %{_libdir}/lib*.so
@@ -192,6 +200,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/*
 %{_includedir}/libglade-1.0
 %{_aclocaldir}/*
+%{_gtkdocdir}/*
+%{_examplesdir}/%{name}-%{version}
 
 %files static
 %defattr(644,root,root,755)

@@ -1,0 +1,12 @@
+--- libglade-0.17/macros/gnome.m4.orig	Thu Aug  3 00:26:45 2000
++++ libglade-0.17/macros/gnome.m4	Sat Aug  3 18:53:56 2002
+@@ -93,6 +93,9 @@
+  	        fi
+ 	      fi
+             fi
++	else
++		AM_CONDITIONAL(HAVE_ORBIT, false)
++		AM_CONDITIONAL(HAVE_GNORBA, false)
+ 	fi
+ 
+ 	if test -n "$3"; then

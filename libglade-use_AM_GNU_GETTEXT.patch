@@ -9,3 +9,22 @@
  
  AC_OUTPUT([Makefile
  libglade.spec
+@@ -97,6 +97,7 @@
+ libglade.spec
+ macros/Makefile
+ intl/Makefile
++po/Makefile.in
+ glade/Makefile
+ doc/Makefile
+ libglade-config
+--- libglade-0.17/Makefile.am.orig	Fri Sep  7 05:00:13 2001
++++ libglade-0.17/Makefile.am	Sat Aug  3 18:32:35 2002
+@@ -43,7 +43,7 @@
+ bin_SCRIPTS = libglade-config libglade-xgettext
+ noinst_PROGRAMS = test-libglade
+ test_libglade_LDADD = $(THE_LIBS) $(XML_LIBS)
+-SUBDIRS = intl macros glade doc
++SUBDIRS = intl po macros glade doc
+ 
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = libglade.m4
