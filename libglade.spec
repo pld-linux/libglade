@@ -3,13 +3,12 @@ Summary(es):	El libglade permite que usted cargue archivos del interfaz del glad
 Summary(pl):	Biblioteka do ³adowania definicji interfejsu generowanego programem glade
 Summary(pt_BR):	Esta biblioteca permite carregar arquivos da interface glade
 Name:		libglade
-Version:	0.17
-Release:	4
+Version:	1.99.12
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/libglade/%{name}-%{version}.tar.gz
-Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
+Source0:        ftp://ftp.gnome.org/pub/GNOME/earthquake/sources/libglade/%{name}-%{version}.tar.bz2
 Patch1:		%{name}-gtkdoc-scanobj-nogtkinit.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -93,7 +92,6 @@ interface glade.
 
 %prep
 %setup -q
-%patch0 -p1
 %patch1 -p1
 
 %build
