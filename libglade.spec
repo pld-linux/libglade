@@ -4,7 +4,7 @@ Summary(pl):	Biblioteka do Ёadowania definicji interfejsu generowanego programem
 Summary(pt_BR):	Esta biblioteca permite carregar arquivos da interface glade
 Name:		libglade
 Version:	0.17
-Release:	2
+Release:	3
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -96,7 +96,7 @@ Group(pl):	X11/Programowanie/Biblioteki
 Group(pt_BR):	X11/Desenvolvimento/Bibliotecas
 Group(ru):	X11/Разработка/Библиотеки
 Group(uk):	X11/Розробка/Б╕бл╕отеки
-Requires:	%{name} = %{version}
+Requires:	%{name}-devel = %{version}
 
 %description static
 Static libglade library.
