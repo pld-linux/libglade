@@ -161,7 +161,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_pkgconfigdir}/*
-%{_includedir}/glade
+%{_includedir}/libglade-1.0
 %{_aclocaldir}/*
 
 /usr/src/examples/%{name}
