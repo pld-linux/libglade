@@ -1,0 +1,11 @@
+--- libglade-0.16/configure.in~	Sat Feb 10 10:35:43 2001
++++ libglade-0.16/configure.in	Mon Apr 23 18:47:37 2001
+@@ -84,7 +84,7 @@
+ dnl gettext stuff ... there is no message catalog for libglade -- libglade
+ dnl provides translation for the XML files it reads in.
+ ALL_LINGUAS=""
+-AM_GNOME_GETTEXT
++AM_GNU_GETTEXT
+ 
+ AC_OUTPUT([Makefile
+ libglade.spec
