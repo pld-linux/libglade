@@ -23,7 +23,7 @@ BuildRequires:	bonobo-devel >= 0.28
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libxml-devel >= 1.7.2
-BuildRequires:  gnome-db-devel >= 0.2.96
+BuildRequires:	gnome-db-devel >= 0.2.96
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
