@@ -11,7 +11,7 @@ Summary(ru):	Библиотека libglade для загрузки интерфейсов пользователя
 Summary(uk):	Б╕бл╕отека libglade для завантаження ╕нтерфейс╕в користувача
 Name:		libglade
 Version:	0.17
-Release:	14
+Release:	15
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -22,6 +22,7 @@ Patch2:		%{name}-clist-gettext.patch
 Patch3:		%{name}-fixquote.patch
 Patch4:		%{name}-gnomedb.patch
 Patch5:		%{name}-nognome.patch
+Patch6:		%{name}-ac.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -275,6 +276,7 @@ Statyczna wersja biblioteki libglade-bonobo.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
 rm -f missing
