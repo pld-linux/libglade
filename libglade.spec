@@ -38,7 +38,7 @@ en tiempo de ejecución.
 %description -l pl
 Biblioteka libglade umo¿liwia dynamiczne ³adowanie definicji
 interfejsu u¿ytkownika generowanego za pomoc± programu glade. Taka
-separacja definicji interfrejsu umozliwia placê nad nim bez
+separacja definicji interfejsu umo¿liwia pracê nad nim bez
 konieczno¶ci rekompilacji programu.
 
 %description -l pt_BR
