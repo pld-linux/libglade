@@ -7,6 +7,7 @@ Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
+Group(es):	X11/Bibliotecas
 Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/libglade/%{name}-%{version}.tar.gz
 BuildRequires:	bonobo-devel >= 0.28
@@ -75,7 +76,8 @@ install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	m4datadir=%{_aclocaldir}
+	m4datadir=%{_aclocaldir} \
+	pkgconfigdir=%{_pkgconfigdir}
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
@@ -100,7 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libgladeConf.sh
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
-%{_libdir}/pkgconfig/*
+%{_pkgconfigdir}/*
 %{_includedir}/glade
 %{_aclocaldir}/*
 
