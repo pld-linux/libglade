@@ -1,12 +1,10 @@
---- libglade-1.99.12/doc/Makefile.am	Sun May 12 13:17:07 2002
-+++ libglade-1.99.12/doc/Makefile.am.org	Sun May 12 18:48:01 2002
-@@ -51,7 +51,8 @@
- 		LD="$(LIBTOOL) --mode=link $(CC)" \
- 		CFLAGS="$(GTKDOC_CFLAGS)" LDFLAGS="$(GTKDOC_LIBS)" \
- 		gtkdoc-scangobj --module=$(DOC_MODULE) \
--			--types=$(srcdir)/$(DOC_MODULE).types \
-+			 --nogtkinit \	
-+		--types=$(srcdir)/$(DOC_MODULE).types \
- 			--output-dir=$(srcdir)
+--- libglade-0.17/doc/Makefile.am~	Fri Sep  7 05:13:48 2001
++++ libglade-0.17/doc/Makefile.am	Tue Oct  2 02:14:18 2001
+@@ -42,6 +42,7 @@
+ 	    LD="$(LIBTOOL) --mode=link $(CC)" \
+ 	    CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" \
+ 	        gtkdoc-scanobj --module=$(DOC_MODULE) \
++			--nogtkinit \
+ 	                --types=$(srcdir)/$(DOC_MODULE).types \
+ 	                --output-dir=$(srcdir)
  	cd $(srcdir) \
- 	&& gtkdoc-scan --module=$(DOC_MODULE) \
