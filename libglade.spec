@@ -23,7 +23,7 @@ Release:	15
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/libglade/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/libglade/%{version}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
 Patch1:		%{name}-gtkdoc-scanobj-nogtkinit.patch
 Patch2:		%{name}-clist-gettext.patch
