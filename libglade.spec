@@ -45,7 +45,6 @@ BuildRequires:	libtool
 BuildRequires:	libxml-devel >= 1.7.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 %define		_gtkdocdir	%{_defaultdocdir}/gtk-doc/html
 
 %description
