@@ -1,7 +1,11 @@
 #
 # Conditional build:
-# _without_gnome	- without gnome package (gnome/gnomedb/bonobo libs)
+# _without_gnome	- without gnome packages (gnome/gnomedb/bonobo libs)
 #			  and w/o gnome/gnomedb/bonobo support in libglade-config
+# _without_bonobo	- without bonobo libs
+#			  and w/o bonobo support in libglade-config
+# _without_gnomedb	- without gnomedb libs
+#			  and w/o gnomedb support in libglade-config
 #
 Summary:	libglade library
 Summary(es):	El libglade permite que usted cargue archivos del interfaz del glade
@@ -27,9 +31,9 @@ URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
-%{!?_without_gnome:BuildRequires:	bonobo-devel >= 0.28}
+%{!?_without_bonobo:BuildRequires:	bonobo-devel >= 0.28}
 BuildRequires:	gettext-devel
-%{!?_without_gnome:BuildRequires:	gnome-db1-devel >= 0.2.96}
+%{!?_without_gnomedb:BuildRequires:	gnome-db1-devel >= 0.2.96}
 %{!?_without_gnome:BuildRequires:	gnome-libs-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	gtk-doc
@@ -39,6 +43,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_gtkdocdir	%{_defaultdocdir}/gtk-doc/html
+
+%if %{?_without_gnome:1}%{!?_without_gnome:0}
+%define		_without_bonobo		1
+%define		_without_gnomedb	1
+%endif
+
 
 %description
 The libglade library allows you to load user interfaces which are
@@ -165,8 +175,6 @@ Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}
 Requires:	%{name}-devel >= 1:0.17-10
 Requires:	%{name}-gnome = %{version}
-Requires:	bonobo-devel
-Requires:	gnome-db-devel
 Requires:	gnome-libs-devel
 
 %description gnome-devel
@@ -205,6 +213,7 @@ Biblioteka libglade-gnomedb.
 Summary:	libglade-gnomedb development files
 Summary(pl):	Pliki dla programistów libglade-gnomedb
 Group:		X11/Development/Libraries
+Requires:	gnome-db-devel
 Requires:	%{name}-gnomedb = %{version}
 Requires:	%{name}-gnome-devel = %{version}
 Requires:	%{name}-gnome-devel >= 1:0.17-14
@@ -245,6 +254,7 @@ Biblioteka libglade-bonobo.
 Summary:	libglade-bonobo development files
 Summary(pl):	Pliki dla programistów libglade-bonobo
 Group:		X11/Development/Libraries
+Requires:	bonobo-devel
 Requires:	%{name}-bonobo = %{version}
 Requires:	%{name}-gnome-devel = %{version}
 Requires:	%{name}-gnome-devel >= 1:0.17-14
@@ -287,7 +297,8 @@ touch po/POTFILES.in
 %{__autoconf}
 %{__automake}
 %configure \
-	%{!?_without_gnome:--enable-bonobo --enable-gnomedb} \
+	%{!?_without_bonobo:--enable-bonobo} \
+	%{!?_without_gnomedb:--enable-gnomedb} \
 	%{?_without_gnome:--without-gnome}
 %{__make}
 
@@ -359,20 +370,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/libglade-gnome.a
 
-%files gnomedb
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libglade-gnomedb.so.*.*
-
-%files gnomedb-devel
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libglade-gnomedb.so
-%{_libdir}/libglade-gnomedb.la
-%{_pkgconfigdir}/libglade-gnomedb.pc
-
-%files gnomedb-static
-%defattr(644,root,root,755)
-%{_libdir}/libglade-gnomedb.a
-
+%if %{?_without_bonobo:0}%{!?_without_bonobo:1}
 %files bonobo
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libglade-bonobo.so.*.*
@@ -386,4 +384,21 @@ rm -rf $RPM_BUILD_ROOT
 %files bonobo-static
 %defattr(644,root,root,755)
 %{_libdir}/libglade-bonobo.a
+%endif
+
+%if %{?_without_gnomedb:0}%{!?_without_gnomedb:1}
+%files gnomedb
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libglade-gnomedb.so.*.*
+
+%files gnomedb-devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libglade-gnomedb.so
+%{_libdir}/libglade-gnomedb.la
+%{_pkgconfigdir}/libglade-gnomedb.pc
+
+%files gnomedb-static
+%defattr(644,root,root,755)
+%{_libdir}/libglade-gnomedb.a
+%endif
 %endif
