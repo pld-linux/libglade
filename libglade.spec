@@ -2,7 +2,7 @@ Summary:	libglade library
 Summary(pl):	Biblioteka do ³adowania definicji interfejsu generowanego programem glade
 Name:		libglade
 Version:	0.16
-Release:	2
+Release:	3
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -10,9 +10,12 @@ Group(de):	X11/Libraries
 Group(es):	X11/Bibliotecas
 Group(pl):	X11/Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/libglade/%{name}-%{version}.tar.gz
+Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	bison
 BuildRequires:	bonobo-devel >= 0.28
 BuildRequires:	gnome-libs-devel
-BuildRequires:	gnome-print-devel >= 0.24
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libxml-devel >= 1.7.2
 URL:		http://www.gnome.org/
@@ -63,9 +66,13 @@ Biblioteka statyczna libglade.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 gettextize --copy --force
+aclocal -I macros
+autoconf
+automake -a -c
 %configure \
 	--enable-bonobo
 %{__make}
