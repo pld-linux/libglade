@@ -4,13 +4,16 @@ Summary(pl):	Biblioteka do ³adowania definicji interfejsu generowanego programem
 Summary(pt_BR):	Esta biblioteca permite carregar arquivos da interface glade
 Name:		libglade
 Version:	0.17
-Release:	4
+Release:	5
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/libglade/%{name}-%{version}.tar.gz
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
 Patch1:		%{name}-gtkdoc-scanobj-nogtkinit.patch
+Patch2:		%{name}-clist-gettext.patch
+Patch3:		%{name}-fixquote.patch
+Patch4:		%{name}-gnomedb.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -20,6 +23,7 @@ BuildRequires:	bonobo-devel >= 0.28
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libxml-devel >= 1.7.2
+BuildRequires:  gnome-db-devel >= 0.2.96
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -95,6 +99,9 @@ interface glade.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 %build
 rm -f missing
@@ -105,21 +112,19 @@ aclocal -I macros
 %{__automake}
 %configure \
 	--enable-bonobo \
-	--disable-gnomedb
+	--enable-gnomedb
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	m4datadir=%{_aclocaldir} \
 	pkgconfigdir=%{_pkgconfigdir}
 
-gzip -9nf AUTHORS ChangeLog NEWS README
-
-install test-libglade.c *.glade $RPM_BUILD_ROOT/usr/src/examples/%{name}
+install test-libglade.c *.glade $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -129,13 +134,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc *gz
 %docdir %{_datadir}/gnome/html/libglade
 %doc %{_datadir}/gnome/html/libglade/*
+%doc %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/libgladeConf.sh
 %attr(755,root,root) %{_libdir}/lib*.so
@@ -144,7 +150,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/libglade-1.0
 %{_aclocaldir}/*
 
-/usr/src/examples/%{name}
 
 %files static
 %defattr(644,root,root,755)
