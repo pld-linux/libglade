@@ -4,8 +4,8 @@
 #			  and w/o gnome/gnomedb/bonobo support in libglade-config
 %bcond_without	bonobo	# without bonobo libs
 #			  and w/o bonobo support in libglade-config
-%bcond_with	gnomedb	# without gnomedb libs
-#			  and w/o gnomedb support in libglade-config
+%bcond_with	gnomedb	# with gnomedb libs
+#			  and with gnomedb support in libglade-config
 #
 %if %{without gnome}
 %undefine	with_bonobo
