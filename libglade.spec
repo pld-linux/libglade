@@ -19,7 +19,7 @@ Summary(ru):	Библиотека libglade для загрузки интерфейсов пользователя
 Summary(uk):	Б╕бл╕отека libglade для завантаження ╕нтерфейс╕в користувача
 Name:		libglade
 Version:	0.17
-Release:	15
+Release:	16
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
