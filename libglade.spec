@@ -77,15 +77,13 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 
 install test-libglade.c *.glade $RPM_BUILD_ROOT/usr/src/examples/%{name}
 
-%find_lang %{name}
-
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
+%files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
