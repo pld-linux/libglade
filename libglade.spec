@@ -1,21 +1,18 @@
 Summary:	libglade library
 Name:		libglade
-Version:	0.7
+Version:	0.8
 Release:	1
 Copyright:	LGPL
 Group:		X11/Libraries
 Source:		ftp://ftp.daa.com.au/pub/james/gnome/%{name}-%{version}.tar.gz
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	libxml-devel
+BuildRequires:	libxml-devel >= 1.7.2
 BuildRequires:	XFree86-devel
-URL:		http://www.gnome.org
+URL:		http://www.gnome.org/
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
-
-Requires: gtk+
-Requires: libxml >= 1.3
 
 %description
 This library allows you to load user interfaces in your program, which are
@@ -55,7 +52,7 @@ install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}
 
 make install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	m4datadir=/usr/share/aclocal
+	m4datadir=%{_datadir}/aclocal
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
@@ -86,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/glade
 
-/usr/share/aclocal/*
+%{_datadir}/aclocal/*
 
 /usr/src/examples/%{name}
 
