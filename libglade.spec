@@ -1,12 +1,12 @@
 Summary:	libglade library
 Summary(pl):	Biblioteka do ³adowania definicji interfejsu generowanego programem glade
 Name:		libglade
-Version:	0.11
-Release:	3
+Version:	0.12
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Group(pl):	X11/Biblioteki
-Source:		ftp://ftp.daa.com.au/pub/james/gnome/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/libglade/%{name}-%{version}.tar.gz
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libxml-devel >= 1.7.2
@@ -68,7 +68,7 @@ install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}
 
 make install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	m4datadir=/usr/share/aclocal
+	m4datadir=%{_aclocaldir}
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
@@ -98,8 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/glade
-
-/usr/share/aclocal/*
+%{_aclocaldir}/*
 
 /usr/src/examples/%{name}
 
