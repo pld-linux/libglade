@@ -11,7 +11,7 @@ Summary(ru):	Библиотека libglade для загрузки интерфейсов пользователя
 Summary(uk):	Б╕бл╕отека libglade для завантаження ╕нтерфейс╕в користувача
 Name:		libglade
 Version:	0.17
-Release:	11
+Release:	12
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
@@ -221,6 +221,8 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 	HTML_DIR=%{_gtkdocdir}
 
 install test-libglade.c *.glade $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
+mv -f $RPM_BUILD_ROOT%{_gtkdocdir}/{libglade,libglade1}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
