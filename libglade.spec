@@ -1,6 +1,6 @@
 Summary:	libglade library
 Name:		libglade
-Version:	0.6
+Version:	0.7
 Release:	1
 Copyright:	LGPL
 Group:		X11/Libraries
