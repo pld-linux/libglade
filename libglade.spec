@@ -100,7 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libgladeConf.sh
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
-%{_datadir}/pkgconfig/*
+%{_libdir}/pkgconfig/*
 %{_includedir}/glade
 %{_aclocaldir}/*
 
