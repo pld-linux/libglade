@@ -7,6 +7,10 @@
 # _without_gnomedb	- without gnomedb libs
 #			  and w/o gnomedb support in libglade-config
 #
+%if %{?_without_gnome:1}%{!?_without_gnome:0}
+%define		_without_bonobo		1
+%define		_without_gnomedb	1
+%endif
 Summary:	libglade library
 Summary(es):	El libglade permite que usted cargue archivos del interfaz del glade
 Summary(pl):	Biblioteka do ³adowania definicji interfejsu generowanego programem glade
@@ -43,12 +47,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_gtkdocdir	%{_defaultdocdir}/gtk-doc/html
-
-%if %{?_without_gnome:1}%{!?_without_gnome:0}
-%define		_without_bonobo		1
-%define		_without_gnomedb	1
-%endif
-
 
 %description
 The libglade library allows you to load user interfaces which are
