@@ -7,7 +7,7 @@
 %bcond_with	gnomedb	# with gnomedb libs
 #			  and with gnomedb support in libglade-config
 #
-%if %{without gnome}
+%if !%{with gnome}
 %undefine	with_bonobo
 %undefine	with_gnomedb
 %endif
