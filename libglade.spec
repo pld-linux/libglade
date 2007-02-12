@@ -12,11 +12,11 @@
 %undefine	with_gnomedb
 %endif
 Summary:	libglade library
-Summary(es):	El libglade permite que usted cargue archivos del interfaz del glade
-Summary(pl):	Biblioteka do Ёadowania definicji interfejsu generowanego programem glade
-Summary(pt_BR):	Esta biblioteca permite carregar arquivos da interface glade
-Summary(ru):	Библиотека libglade для загрузки интерфейсов пользователя
-Summary(uk):	Б╕бл╕отека libglade для завантаження ╕нтерфейс╕в користувача
+Summary(es.UTF-8):   El libglade permite que usted cargue archivos del interfaz del glade
+Summary(pl.UTF-8):   Biblioteka do е┌adowania definicji interfejsu generowanego programem glade
+Summary(pt_BR.UTF-8):   Esta biblioteca permite carregar arquivos da interface glade
+Summary(ru.UTF-8):   п▒п╦п╠п╩п╦п╬я┌п╣п╨п╟ libglade п╢п╩я▐ п╥п╟пЁя─я┐п╥п╨п╦ п╦п╫я┌п╣я─я└п╣п╧я│п╬п╡ п©п╬п╩я▄п╥п╬п╡п╟я┌п╣п╩я▐
+Summary(uk.UTF-8):   п▒я√п╠п╩я√п╬я┌п╣п╨п╟ libglade п╢п╩я▐ п╥п╟п╡п╟п╫я┌п╟п╤п╣п╫п╫я▐ я√п╫я┌п╣я─я└п╣п╧я│я√п╡ п╨п╬я─п╦я│я┌я┐п╡п╟я┤п╟
 Name:		libglade
 Version:	0.17
 Release:	20
@@ -55,43 +55,43 @@ also be edited with GLADE. Currently libglade supports all of the
 widgets in current releases, keyboard accelerators and automatic
 signal connection.
 
-%description -l es
+%description -l es.UTF-8
 El libglade permite que usted cargue archivos del interfaz del glade
-en tiempo de ejecuciСn.
+en tiempo de ejecuciцЁn.
 
-%description -l pl
-Biblioteka libglade umo©liwia dynamiczne Ёadowanie definicji
-interfejsu u©ytkownika generowanego za pomoc╠ programu glade. Taka
-separacja definicji interfejsu umo©liwia pracЙ nad nim bez
-konieczno╤ci rekompilacji programu.
+%description -l pl.UTF-8
+Biblioteka libglade umoе╪liwia dynamiczne е┌adowanie definicji
+interfejsu uе╪ytkownika generowanego za pomocд┘ programu glade. Taka
+separacja definicji interfejsu umoе╪liwia pracд≥ nad nim bez
+koniecznoе⌡ci rekompilacji programu.
 
-%description -l pt_BR
-O libglade permite carregar, em tempo de execuГЦo, arquivos da
-interface glade. NЦo И necessАrio ter o glade instalado, mas esta И a
+%description -l pt_BR.UTF-8
+O libglade permite carregar, em tempo de execuц╖цёo, arquivos da
+interface glade. Nцёo ц╘ necessц║rio ter o glade instalado, mas esta ц╘ a
 melhor maneira de criar os arquivos de interface.
 
-%description -l ru
-Библиотека libglade позволяет загружать в вашу програму интерфейсы
-пользователя, хранящиеся во внешнем файле. Это позволяет менять
-интерфейс без перекомпиляции программы. Интерфейсы могут также
-редактироваться при помощи GLADE. Сейчас libglade поддерживает все
-виджеты, клавиатурные акселераторы и автоматическое сигнальное
-соединение.
+%description -l ru.UTF-8
+п▒п╦п╠п╩п╦п╬я┌п╣п╨п╟ libglade п©п╬п╥п╡п╬п╩я▐п╣я┌ п╥п╟пЁя─я┐п╤п╟я┌я▄ п╡ п╡п╟я┬я┐ п©я─п╬пЁя─п╟п╪я┐ п╦п╫я┌п╣я─я└п╣п╧я│я▀
+п©п╬п╩я▄п╥п╬п╡п╟я┌п╣п╩я▐, я┘я─п╟п╫я▐я┴п╦п╣я│я▐ п╡п╬ п╡п╫п╣я┬п╫п╣п╪ я└п╟п╧п╩п╣. п╜я┌п╬ п©п╬п╥п╡п╬п╩я▐п╣я┌ п╪п╣п╫я▐я┌я▄
+п╦п╫я┌п╣я─я└п╣п╧я│ п╠п╣п╥ п©п╣я─п╣п╨п╬п╪п©п╦п╩я▐я├п╦п╦ п©я─п╬пЁя─п╟п╪п╪я▀. п≤п╫я┌п╣я─я└п╣п╧я│я▀ п╪п╬пЁя┐я┌ я┌п╟п╨п╤п╣
+я─п╣п╢п╟п╨я┌п╦я─п╬п╡п╟я┌я▄я│я▐ п©я─п╦ п©п╬п╪п╬я┴п╦ GLADE. п║п╣п╧я┤п╟я│ libglade п©п╬п╢п╢п╣я─п╤п╦п╡п╟п╣я┌ п╡я│п╣
+п╡п╦п╢п╤п╣я┌я▀, п╨п╩п╟п╡п╦п╟я┌я┐я─п╫я▀п╣ п╟п╨я│п╣п╩п╣я─п╟я┌п╬я─я▀ п╦ п╟п╡я┌п╬п╪п╟я┌п╦я┤п╣я│п╨п╬п╣ я│п╦пЁп╫п╟п╩я▄п╫п╬п╣
+я│п╬п╣п╢п╦п╫п╣п╫п╦п╣.
 
-%description -l uk
-Б╕бл╕отека libglade дозволя╓ завантажувати в вашу програму ╕нтерфейси
-користувача, що збер╕гаються в зовн╕шньому файл╕. Це дозволя╓
-зм╕нювати ╕нтерфейс без перекомп╕ляц╕╖ програми. ╤нтерфейси можуть
-також редагуватися за допомогою GLADE. Нараз╕ libglade п╕дтриму╓ вс╕
-в╕джети, клав╕атурн╕ акселератори та автоматичне сигнальне з'╓днання.
+%description -l uk.UTF-8
+п▒я√п╠п╩я√п╬я┌п╣п╨п╟ libglade п╢п╬п╥п╡п╬п╩я▐я■ п╥п╟п╡п╟п╫я┌п╟п╤я┐п╡п╟я┌п╦ п╡ п╡п╟я┬я┐ п©я─п╬пЁя─п╟п╪я┐ я√п╫я┌п╣я─я└п╣п╧я│п╦
+п╨п╬я─п╦я│я┌я┐п╡п╟я┤п╟, я┴п╬ п╥п╠п╣я─я√пЁп╟я▌я┌я▄я│я▐ п╡ п╥п╬п╡п╫я√я┬п╫я▄п╬п╪я┐ я└п╟п╧п╩я√. п╕п╣ п╢п╬п╥п╡п╬п╩я▐я■
+п╥п╪я√п╫я▌п╡п╟я┌п╦ я√п╫я┌п╣я─я└п╣п╧я│ п╠п╣п╥ п©п╣я─п╣п╨п╬п╪п©я√п╩я▐я├я√я≈ п©я─п╬пЁя─п╟п╪п╦. п├п╫я┌п╣я─я└п╣п╧я│п╦ п╪п╬п╤я┐я┌я▄
+я┌п╟п╨п╬п╤ я─п╣п╢п╟пЁя┐п╡п╟я┌п╦я│я▐ п╥п╟ п╢п╬п©п╬п╪п╬пЁп╬я▌ GLADE. п²п╟я─п╟п╥я√ libglade п©я√п╢я┌я─п╦п╪я┐я■ п╡я│я√
+п╡я√п╢п╤п╣я┌п╦, п╨п╩п╟п╡я√п╟я┌я┐я─п╫я√ п╟п╨я│п╣п╩п╣я─п╟я┌п╬я─п╦ я┌п╟ п╟п╡я┌п╬п╪п╟я┌п╦я┤п╫п╣ я│п╦пЁп╫п╟п╩я▄п╫п╣ п╥'я■п╢п╫п╟п╫п╫я▐.
 
 %package devel
 Summary:	Libraries, includes, etc to develop libglade applications
-Summary(es):	Archivos necesarios para el desarrollo de aplicaciones con libglade
-Summary(pl):	Biblioteki, pliki nagЁСwkowe i dokumentacja dla programisty
-Summary(pt_BR):	Arquivos necessАrios para o desenvolvimento de aplicaГУes com a interface glade
-Summary(ru):	Файлы для разработки программ с использованием libglade
-Summary(uk):	Файли для розробки програм з використанням libglade
+Summary(es.UTF-8):   Archivos necesarios para el desarrollo de aplicaciones con libglade
+Summary(pl.UTF-8):   Biblioteki, pliki nagе┌цЁwkowe i dokumentacja dla programisty
+Summary(pt_BR.UTF-8):   Arquivos necessц║rios para o desenvolvimento de aplicaц╖ц╣es com a interface glade
+Summary(ru.UTF-8):   п╓п╟п╧п╩я▀ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╬пЁя─п╟п╪п╪ я│ п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣п╪ libglade
+Summary(uk.UTF-8):   п╓п╟п╧п╩п╦ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪ п╥ п╡п╦п╨п╬я─п╦я│я┌п╟п╫п╫я▐п╪ libglade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gtk-doc-common
@@ -101,72 +101,72 @@ Requires:	libxml-devel
 Libraries, include files, etc you can use to develop libglade
 applications.
 
-%description devel -l es
-Archivos de inclusiСn y bibliotecas necesarias para el desarrollo de
+%description devel -l es.UTF-8
+Archivos de inclusiцЁn y bibliotecas necesarias para el desarrollo de
 aplicaciones con glade.
 
-%description devel -l pl
-Biblioteki, pliki nagЁСwkowe i dokumentacja dla programisty.
+%description devel -l pl.UTF-8
+Biblioteki, pliki nagе┌цЁwkowe i dokumentacja dla programisty.
 
-%description devel -l pt_BR
-Arquivos de inclusЦo e bibliotecas para o desenvolvimento de
-aplicaГУes com a interface glade.
+%description devel -l pt_BR.UTF-8
+Arquivos de inclusцёo e bibliotecas para o desenvolvimento de
+aplicaц╖ц╣es com a interface glade.
 
-%description devel -l ru
-Пакет libglade-devel содержит файлы, необходимые для разработки
-програм, использующих libglade.
+%description devel -l ru.UTF-8
+п÷п╟п╨п╣я┌ libglade-devel я│п╬п╢п╣я─п╤п╦я┌ я└п╟п╧п╩я▀, п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀п╣ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦
+п©я─п╬пЁя─п╟п╪, п╦я│п©п╬п╩я▄п╥я┐я▌я┴п╦я┘ libglade.
 
-%description devel -l uk
-Пакет libglade-devel м╕стить файли, необх╕дн╕ для розробки програм, що
-використовують libglade.
+%description devel -l uk.UTF-8
+п÷п╟п╨п╣я┌ libglade-devel п╪я√я│я┌п╦я┌я▄ я└п╟п╧п╩п╦, п╫п╣п╬п╠я┘я√п╢п╫я√ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪, я┴п╬
+п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┌я▄ libglade.
 
 %package static
 Summary:	Static libglade library
-Summary(es):	Archivos estАticos necesarios para el desarrollo de aplicaciones con libglade
-Summary(pl):	Biblioteka statyczna libglade
-Summary(pt_BR):	Arquivos estАticos necessАrios para o desenvolvimento de aplicaГУes com a interface glade
-Summary(ru):	Статические библиотеки для разработки програм с использованием libglade
-Summary(uk):	Статичн╕ б╕бл╕отеки для розробки програм з використанням libglade
+Summary(es.UTF-8):   Archivos estц║ticos necesarios para el desarrollo de aplicaciones con libglade
+Summary(pl.UTF-8):   Biblioteka statyczna libglade
+Summary(pt_BR.UTF-8):   Arquivos estц║ticos necessц║rios para o desenvolvimento de aplicaц╖ц╣es com a interface glade
+Summary(ru.UTF-8):   п║я┌п╟я┌п╦я┤п╣я│п╨п╦п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╬пЁя─п╟п╪ я│ п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣п╪ libglade
+Summary(uk.UTF-8):   п║я┌п╟я┌п╦я┤п╫я√ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪ п╥ п╡п╦п╨п╬я─п╦я│я┌п╟п╫п╫я▐п╪ libglade
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static libglade library.
 
-%description static -l es
-Archivos estАticos necesarias para el desarrollo de aplicaciones con
+%description static -l es.UTF-8
+Archivos estц║ticos necesarias para el desarrollo de aplicaciones con
 glade.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna libglade.
 
-%description static -l pt_BR
-Bibliotecas estАticas para o desenvolvimento de aplicaГУes com a
+%description static -l pt_BR.UTF-8
+Bibliotecas estц║ticas para o desenvolvimento de aplicaц╖ц╣es com a
 interface glade.
 
-%description static -l ru
-Пакет libglade-devel-static содержит статичнские библиотеки, которые
-можно использовать для разработки програм, требующих libglade.
+%description static -l ru.UTF-8
+п÷п╟п╨п╣я┌ libglade-devel-static я│п╬п╢п╣я─п╤п╦я┌ я│я┌п╟я┌п╦я┤п╫я│п╨п╦п╣ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦, п╨п╬я┌п╬я─я▀п╣
+п╪п╬п╤п╫п╬ п╦я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╬пЁя─п╟п╪, я┌я─п╣п╠я┐я▌я┴п╦я┘ libglade.
 
-%description static -l uk
-Пакет libglade-devel-static м╕стить статичн╕ б╕бл╕отеки, як╕ можна
-використовувати для розробки програм, що потребують libglade.
+%description static -l uk.UTF-8
+п÷п╟п╨п╣я┌ libglade-devel-static п╪я√я│я┌п╦я┌я▄ я│я┌п╟я┌п╦я┤п╫я√ п╠я√п╠п╩я√п╬я┌п╣п╨п╦, я▐п╨я√ п╪п╬п╤п╫п╟
+п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐п╡п╟я┌п╦ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪, я┴п╬ п©п╬я┌я─п╣п╠я┐я▌я┌я▄ libglade.
 
 %package gnome
 Summary:	libglade-gnome library
-Summary(pl):	Biblioteka libglade-gnome
+Summary(pl.UTF-8):   Biblioteka libglade-gnome
 Group:		X11/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description gnome
 libglade-gnome library.
 
-%description gnome -l pl
+%description gnome -l pl.UTF-8
 Biblioteki libglade-gnome.
 
 %package gnome-devel
 Summary:	libglade-gnome development files
-Summary(pl):	Pliki dla programistСw libglade-gnome
+Summary(pl.UTF-8):   Pliki dla programistцЁw libglade-gnome
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 Requires:	%{name}-gnome = %{epoch}:%{version}-%{release}
@@ -175,12 +175,12 @@ Requires:	gnome-libs-devel
 %description gnome-devel
 libglade-gnome development files.
 
-%description gnome-devel -l pl
-Pliki dla programistСw u©ywaj╠cych libglade-gnome.
+%description gnome-devel -l pl.UTF-8
+Pliki dla programistцЁw uе╪ywajд┘cych libglade-gnome.
 
 %package gnome-static
 Summary:	Static libglade-gnome library
-Summary(pl):	Statyczna biblioteka libglade-gnome
+Summary(pl.UTF-8):   Statyczna biblioteka libglade-gnome
 Group:		X11/Development/Libraries
 Requires:	%{name}-gnome-devel = %{epoch}:%{version}-%{release}
 Conflicts:	%{name}-static < 1:0.17-10
@@ -188,24 +188,24 @@ Conflicts:	%{name}-static < 1:0.17-10
 %description gnome-static
 Static version of libglade-gnome library.
 
-%description gnome-static -l pl
+%description gnome-static -l pl.UTF-8
 Statyczna wersja biblioteki libglade-gnome.
 
 %package gnomedb
 Summary:	libglade-gnomedb library
-Summary(pl):	Biblioteka libglade-gnomedb
+Summary(pl.UTF-8):   Biblioteka libglade-gnomedb
 Group:		X11/Libraries
 Requires:	%{name}-gnome = %{epoch}:%{version}-%{release}
 
 %description gnomedb
 libglade-gnomedb library.
 
-%description gnomedb -l pl
+%description gnomedb -l pl.UTF-8
 Biblioteka libglade-gnomedb.
 
 %package gnomedb-devel
 Summary:	libglade-gnomedb development files
-Summary(pl):	Pliki dla programistСw libglade-gnomedb
+Summary(pl.UTF-8):   Pliki dla programistцЁw libglade-gnomedb
 Group:		X11/Development/Libraries
 Requires:	%{name}-gnomedb = %{epoch}:%{version}-%{release}
 Requires:	%{name}-gnome-devel = %{epoch}:%{version}-%{release}
@@ -214,12 +214,12 @@ Requires:	gnome-db-devel
 %description gnomedb-devel
 libglade-gnomedb development files.
 
-%description gnomedb-devel -l pl
-Pliki dla programistСw u©ywaj╠cych libglade-gnomedb.
+%description gnomedb-devel -l pl.UTF-8
+Pliki dla programistцЁw uе╪ywajд┘cych libglade-gnomedb.
 
 %package gnomedb-static
 Summary:	libglade-gnomedb static library
-Summary(pl):	Statyczna biblioteka libglade-gnomedb
+Summary(pl.UTF-8):   Statyczna biblioteka libglade-gnomedb
 Group:		X11/Development/Libraries
 Requires:	%{name}-gnomedb-devel = %{epoch}:%{version}-%{release}
 Conflicts:	%{name}-gnome-static < 1:0.17-14
@@ -227,24 +227,24 @@ Conflicts:	%{name}-gnome-static < 1:0.17-14
 %description gnomedb-static
 Static version of libglade-gnomedb library.
 
-%description gnomedb-static -l pl
+%description gnomedb-static -l pl.UTF-8
 Statyczna wersja biblioteki libglade-gnomedb.
 
 %package bonobo
 Summary:	libglade-bonobo library
-Summary(pl):	Biblioteka libglade-bonobo
+Summary(pl.UTF-8):   Biblioteka libglade-bonobo
 Group:		X11/Libraries
 Requires:	%{name}-gnome = %{epoch}:%{version}-%{release}
 
 %description bonobo
 libglade-bonobo library.
 
-%description bonobo -l pl
+%description bonobo -l pl.UTF-8
 Biblioteka libglade-bonobo.
 
 %package bonobo-devel
 Summary:	libglade-bonobo development files
-Summary(pl):	Pliki dla programistСw libglade-bonobo
+Summary(pl.UTF-8):   Pliki dla programistцЁw libglade-bonobo
 Group:		X11/Development/Libraries
 Requires:	%{name}-bonobo = %{epoch}:%{version}-%{release}
 Requires:	%{name}-gnome-devel = %{epoch}:%{version}-%{release}
@@ -253,12 +253,12 @@ Requires:	bonobo-devel
 %description bonobo-devel
 libglade-bonobo development files.
 
-%description bonobo-devel -l pl
-Pliki dla programistСw u©ywaj╠cych libglade-bonobo.
+%description bonobo-devel -l pl.UTF-8
+Pliki dla programistцЁw uе╪ywajд┘cych libglade-bonobo.
 
 %package bonobo-static
 Summary:	libglade-bonobo static library
-Summary(pl):	Statyczna biblioteka libglade-bonobo
+Summary(pl.UTF-8):   Statyczna biblioteka libglade-bonobo
 Group:		X11/Development/Libraries
 Requires:	%{name}-bonobo-devel = %{epoch}:%{version}-%{release}
 Conflicts:	%{name}-gnome-static < 1:0.17-14
@@ -266,7 +266,7 @@ Conflicts:	%{name}-gnome-static < 1:0.17-14
 %description bonobo-static
 Static version of libglade-bonobo library.
 
-%description bonobo-static -l pl
+%description bonobo-static -l pl.UTF-8
 Statyczna wersja biblioteki libglade-bonobo.
 
 %prep
