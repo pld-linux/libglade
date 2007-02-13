@@ -12,11 +12,11 @@
 %undefine	with_gnomedb
 %endif
 Summary:	libglade library
-Summary(es.UTF-8):   El libglade permite que usted cargue archivos del interfaz del glade
-Summary(pl.UTF-8):   Biblioteka do ładowania definicji interfejsu generowanego programem glade
-Summary(pt_BR.UTF-8):   Esta biblioteca permite carregar arquivos da interface glade
-Summary(ru.UTF-8):   Библиотека libglade для загрузки интерфейсов пользователя
-Summary(uk.UTF-8):   Бібліотека libglade для завантаження інтерфейсів користувача
+Summary(es.UTF-8):	El libglade permite que usted cargue archivos del interfaz del glade
+Summary(pl.UTF-8):	Biblioteka do ładowania definicji interfejsu generowanego programem glade
+Summary(pt_BR.UTF-8):	Esta biblioteca permite carregar arquivos da interface glade
+Summary(ru.UTF-8):	Библиотека libglade для загрузки интерфейсов пользователя
+Summary(uk.UTF-8):	Бібліотека libglade для завантаження інтерфейсів користувача
 Name:		libglade
 Version:	0.17
 Release:	20
@@ -87,11 +87,11 @@ melhor maneira de criar os arquivos de interface.
 
 %package devel
 Summary:	Libraries, includes, etc to develop libglade applications
-Summary(es.UTF-8):   Archivos necesarios para el desarrollo de aplicaciones con libglade
-Summary(pl.UTF-8):   Biblioteki, pliki nagłówkowe i dokumentacja dla programisty
-Summary(pt_BR.UTF-8):   Arquivos necessários para o desenvolvimento de aplicações com a interface glade
-Summary(ru.UTF-8):   Файлы для разработки программ с использованием libglade
-Summary(uk.UTF-8):   Файли для розробки програм з використанням libglade
+Summary(es.UTF-8):	Archivos necesarios para el desarrollo de aplicaciones con libglade
+Summary(pl.UTF-8):	Biblioteki, pliki nagłówkowe i dokumentacja dla programisty
+Summary(pt_BR.UTF-8):	Arquivos necessários para o desenvolvimento de aplicações com a interface glade
+Summary(ru.UTF-8):	Файлы для разработки программ с использованием libglade
+Summary(uk.UTF-8):	Файли для розробки програм з використанням libglade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gtk-doc-common
@@ -122,11 +122,11 @@ aplicações com a interface glade.
 
 %package static
 Summary:	Static libglade library
-Summary(es.UTF-8):   Archivos estáticos necesarios para el desarrollo de aplicaciones con libglade
-Summary(pl.UTF-8):   Biblioteka statyczna libglade
-Summary(pt_BR.UTF-8):   Arquivos estáticos necessários para o desenvolvimento de aplicações com a interface glade
-Summary(ru.UTF-8):   Статические библиотеки для разработки програм с использованием libglade
-Summary(uk.UTF-8):   Статичні бібліотеки для розробки програм з використанням libglade
+Summary(es.UTF-8):	Archivos estáticos necesarios para el desarrollo de aplicaciones con libglade
+Summary(pl.UTF-8):	Biblioteka statyczna libglade
+Summary(pt_BR.UTF-8):	Arquivos estáticos necessários para o desenvolvimento de aplicações com a interface glade
+Summary(ru.UTF-8):	Статические библиотеки для разработки програм с использованием libglade
+Summary(uk.UTF-8):	Статичні бібліотеки для розробки програм з використанням libglade
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
@@ -154,7 +154,7 @@ interface glade.
 
 %package gnome
 Summary:	libglade-gnome library
-Summary(pl.UTF-8):   Biblioteka libglade-gnome
+Summary(pl.UTF-8):	Biblioteka libglade-gnome
 Group:		X11/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -166,7 +166,7 @@ Biblioteki libglade-gnome.
 
 %package gnome-devel
 Summary:	libglade-gnome development files
-Summary(pl.UTF-8):   Pliki dla programistów libglade-gnome
+Summary(pl.UTF-8):	Pliki dla programistów libglade-gnome
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 Requires:	%{name}-gnome = %{epoch}:%{version}-%{release}
@@ -180,7 +180,7 @@ Pliki dla programistów używających libglade-gnome.
 
 %package gnome-static
 Summary:	Static libglade-gnome library
-Summary(pl.UTF-8):   Statyczna biblioteka libglade-gnome
+Summary(pl.UTF-8):	Statyczna biblioteka libglade-gnome
 Group:		X11/Development/Libraries
 Requires:	%{name}-gnome-devel = %{epoch}:%{version}-%{release}
 Conflicts:	%{name}-static < 1:0.17-10
@@ -193,7 +193,7 @@ Statyczna wersja biblioteki libglade-gnome.
 
 %package gnomedb
 Summary:	libglade-gnomedb library
-Summary(pl.UTF-8):   Biblioteka libglade-gnomedb
+Summary(pl.UTF-8):	Biblioteka libglade-gnomedb
 Group:		X11/Libraries
 Requires:	%{name}-gnome = %{epoch}:%{version}-%{release}
 
@@ -205,7 +205,7 @@ Biblioteka libglade-gnomedb.
 
 %package gnomedb-devel
 Summary:	libglade-gnomedb development files
-Summary(pl.UTF-8):   Pliki dla programistów libglade-gnomedb
+Summary(pl.UTF-8):	Pliki dla programistów libglade-gnomedb
 Group:		X11/Development/Libraries
 Requires:	%{name}-gnomedb = %{epoch}:%{version}-%{release}
 Requires:	%{name}-gnome-devel = %{epoch}:%{version}-%{release}
@@ -219,7 +219,7 @@ Pliki dla programistów używających libglade-gnomedb.
 
 %package gnomedb-static
 Summary:	libglade-gnomedb static library
-Summary(pl.UTF-8):   Statyczna biblioteka libglade-gnomedb
+Summary(pl.UTF-8):	Statyczna biblioteka libglade-gnomedb
 Group:		X11/Development/Libraries
 Requires:	%{name}-gnomedb-devel = %{epoch}:%{version}-%{release}
 Conflicts:	%{name}-gnome-static < 1:0.17-14
@@ -232,7 +232,7 @@ Statyczna wersja biblioteki libglade-gnomedb.
 
 %package bonobo
 Summary:	libglade-bonobo library
-Summary(pl.UTF-8):   Biblioteka libglade-bonobo
+Summary(pl.UTF-8):	Biblioteka libglade-bonobo
 Group:		X11/Libraries
 Requires:	%{name}-gnome = %{epoch}:%{version}-%{release}
 
@@ -244,7 +244,7 @@ Biblioteka libglade-bonobo.
 
 %package bonobo-devel
 Summary:	libglade-bonobo development files
-Summary(pl.UTF-8):   Pliki dla programistów libglade-bonobo
+Summary(pl.UTF-8):	Pliki dla programistów libglade-bonobo
 Group:		X11/Development/Libraries
 Requires:	%{name}-bonobo = %{epoch}:%{version}-%{release}
 Requires:	%{name}-gnome-devel = %{epoch}:%{version}-%{release}
@@ -258,7 +258,7 @@ Pliki dla programistów używających libglade-bonobo.
 
 %package bonobo-static
 Summary:	libglade-bonobo static library
-Summary(pl.UTF-8):   Statyczna biblioteka libglade-bonobo
+Summary(pl.UTF-8):	Statyczna biblioteka libglade-bonobo
 Group:		X11/Development/Libraries
 Requires:	%{name}-bonobo-devel = %{epoch}:%{version}-%{release}
 Conflicts:	%{name}-gnome-static < 1:0.17-14
