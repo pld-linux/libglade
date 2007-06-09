@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	gnome	# without gnome packages (gnome/gnomedb/bonobo libs)
+%bcond_with	gnome	# without gnome packages (gnome/gnomedb/bonobo libs)
 #			  and w/o gnome/gnomedb/bonobo support in libglade-config
 %bcond_without	bonobo	# without bonobo libs
 #			  and w/o bonobo support in libglade-config
@@ -19,7 +19,7 @@ Summary(ru.UTF-8):	Библиотека libglade для загрузки инт�
 Summary(uk.UTF-8):	Бібліотека libglade для завантаження інтерфейсів користувача
 Name:		libglade
 Version:	0.17
-Release:	21
+Release:	22
 Epoch:		1
 License:	LGPL
 Group:		X11/Libraries
