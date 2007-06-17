@@ -1,11 +1,11 @@
 #
 # Conditional build:
-%bcond_with	gnome	# without gnome packages (gnome/gnomedb/bonobo libs)
-#			  and w/o gnome/gnomedb/bonobo support in libglade-config
-%bcond_without	bonobo	# without bonobo libs
-#			  and w/o bonobo support in libglade-config
-%bcond_with	gnomedb	# with gnomedb libs
-#			  and with gnomedb support in libglade-config
+%bcond_with	gnome	# gnome packages (gnome/gnomedb/bonobo libs)
+#			  and gnome/gnomedb/bonobo support in libglade-config
+%bcond_without	bonobo	# bonobo libs
+#			  and bonobo support in libglade-config
+%bcond_with	gnomedb	# gnomedb libs
+#			  and gnomedb support in libglade-config
 #
 %if !%{with gnome}
 %undefine	with_bonobo
