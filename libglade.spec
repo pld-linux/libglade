@@ -21,9 +21,9 @@ Name:		libglade
 Version:	0.17
 Release:	22
 Epoch:		1
-License:	LGPL
+License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/libglade/%{version}/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libglade/0.17/%{name}-%{version}.tar.gz
 # Source0-md5:	38b2e2cfd813783fe157617813bfe3b3
 Patch0:		%{name}-use_AM_GNU_GETTEXT.patch
 Patch1:		%{name}-gtkdoc-scanobj-nogtkinit.patch
