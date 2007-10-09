@@ -1,0 +1,2 @@
+- removed automake from %build,
+- added passing LDFLAGS="-s" to ./configure environment.
