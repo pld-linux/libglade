@@ -1,0 +1,3 @@
+- updated to 0.0.12,
+- added using %{_aclocaldir} macro,
+- updated Source url.
