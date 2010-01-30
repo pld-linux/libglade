@@ -44,6 +44,8 @@ BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	gtk-doc
 BuildRequires:	libtool
 BuildRequires:	libxml-devel >= 1.7.2
+BuildRequires:	pkgconfig
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.98
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -207,8 +209,8 @@ Biblioteka libglade-gnomedb.
 Summary:	libglade-gnomedb development files
 Summary(pl.UTF-8):	Pliki dla programistów libglade-gnomedb
 Group:		X11/Development/Libraries
-Requires:	%{name}-gnomedb = %{epoch}:%{version}-%{release}
 Requires:	%{name}-gnome-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-gnomedb = %{epoch}:%{version}-%{release}
 Requires:	gnome-db-devel
 
 %description gnomedb-devel
