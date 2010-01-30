@@ -1,0 +1,1 @@
+- moved /usr/X11R6/lib/pkgconfig/* to %{_pkgconfigdir} [not tested]
