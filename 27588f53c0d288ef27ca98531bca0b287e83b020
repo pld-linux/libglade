@@ -1,0 +1,2 @@
+- remove using %find_lang macro (current libglade have internationalized
+  only test program).
