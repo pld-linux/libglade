@@ -1,0 +1,8 @@
+- new %doc packing infrastructure
+- moved docs from devel to main package
+- added %doc to examples, fixed dir with examples
+- added libglade-clist-gettext.patch and libglade-fixquote.patch from RH
+- added libglade-gnomedb from TurboLinux
+- enabled build with gnomedb
+- added BR: gnome-db-devel >= 0.2.96
+- release 5; STBR
