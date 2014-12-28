@@ -37,7 +37,7 @@ BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	bison
 %{?with_bonobo:BuildRequires:	bonobo-devel >= 0.28}
-BuildRequires:	gettext-devel >= 0.11.5
+BuildRequires:	gettext-tools >= 0.11.5
 %{?with_gnomedb:BuildRequires:	gnome-db-devel >= 0.2.96}
 %{?with_gnome:BuildRequires:	gnome-libs-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
