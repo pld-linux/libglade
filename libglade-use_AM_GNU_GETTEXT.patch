@@ -1,22 +1,29 @@
---- libglade-0.16/configure.in~	Sat Feb 10 10:35:43 2001
-+++ libglade-0.16/configure.in	Mon Apr 23 18:47:37 2001
-@@ -84,7 +84,7 @@
+--- libglade-0.17/configure.in.orig	2001-09-07 05:00:29.000000000 +0200
++++ libglade-0.17/configure.in	2026-03-15 12:00:00.000000000 +0100
+@@ -91,14 +91,12 @@
  dnl gettext stuff ... there is no message catalog for libglade -- libglade
  dnl provides translation for the XML files it reads in.
  ALL_LINGUAS=""
 -AM_GNOME_GETTEXT
-+AM_GNU_GETTEXT
++AM_GNU_GETTEXT([external])
  
- AC_OUTPUT([Makefile
+ AC_CONFIG_FILES([Makefile
  libglade.spec
---- libglade-0.17/Makefile.am.orig	Fri Sep  7 05:00:13 2001
-+++ libglade-0.17/Makefile.am	Sat Aug  3 18:32:35 2002
+ macros/Makefile
+-intl/Makefile
+ glade/Makefile
+-doc/Makefile
+ libglade-config
+ libgladeConf.sh
+ libglade.pc
+--- libglade-0.17/Makefile.am.orig	2001-09-07 05:00:13.000000000 +0200
++++ libglade-0.17/Makefile.am	2026-03-15 12:00:00.000000000 +0100
 @@ -43,7 +43,7 @@
  bin_SCRIPTS = libglade-config libglade-xgettext
  noinst_PROGRAMS = test-libglade
  test_libglade_LDADD = $(THE_LIBS) $(XML_LIBS)
 -SUBDIRS = intl macros glade doc
-+SUBDIRS = intl po macros glade doc
++SUBDIRS = po macros glade
  
  m4datadir = $(datadir)/aclocal
  m4data_DATA = libglade.m4

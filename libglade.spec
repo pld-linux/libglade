@@ -19,7 +19,7 @@ Summary(ru.UTF-8):	Библиотека libglade для загрузки инт�
 Summary(uk.UTF-8):	Бібліотека libglade для завантаження інтерфейсів користувача
 Name:		libglade
 Version:	0.17
-Release:	23
+Release:	24
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
@@ -41,7 +41,6 @@ BuildRequires:	gettext-tools >= 0.11.5
 %{?with_gnomedb:BuildRequires:	gnome-db-devel >= 0.2.96}
 %{?with_gnome:BuildRequires:	gnome-libs-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	gtk-doc
 BuildRequires:	libtool
 BuildRequires:	libxml-devel >= 1.7.2
 BuildRequires:	pkgconfig
@@ -96,7 +95,6 @@ Summary(ru.UTF-8):	Файлы для разработки программ с и
 Summary(uk.UTF-8):	Файли для розробки програм з використанням libglade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	gtk-doc-common
 Requires:	libxml-devel
 
 %description devel
@@ -281,11 +279,13 @@ Statyczna wersja biblioteki libglade-bonobo.
 %patch -P5 -p1
 %patch -P6 -p1
 
+%{__sed} -i '1s,#!/usr/bin/env python,#!/usr/bin/python2,' libglade-xgettext
+
 %build
 %{__libtoolize}
 %{__gettextize}
 touch po/POTFILES.in
-%{__aclocal} -I macros
+%{__aclocal} -I macros -I m4
 %{__autoconf}
 %{__automake}
 %configure \
@@ -307,7 +307,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 install test-libglade.c *.glade $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-mv -f $RPM_BUILD_ROOT%{_gtkdocdir}/{libglade,libglade1}
+%{!?with_gnome:rm -f $RPM_BUILD_ROOT%{_libdir}/libgladeConf.sh}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -328,6 +328,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libglade.so.*.*
+%attr(755,root,root) %{_libdir}/libglade.so.0
 
 %files devel
 %defattr(644,root,root,755)
@@ -339,7 +340,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/libglade.pc
 %{_includedir}/libglade-1.0
 %{_aclocaldir}/*
-%{_gtkdocdir}/*
 %{_examplesdir}/%{name}-%{version}
 
 %files static

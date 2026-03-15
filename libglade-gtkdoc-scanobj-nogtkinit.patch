@@ -1,10 +1,11 @@
---- libglade-0.17/doc/Makefile.am~	Fri Sep  7 05:13:48 2001
-+++ libglade-0.17/doc/Makefile.am	Tue Oct  2 02:14:18 2001
-@@ -42,6 +42,7 @@
+--- libglade-0.17/doc/Makefile.am~	2026-03-15 01:46:28.893105268 +0100
++++ libglade-0.17/doc/Makefile.am	2026-03-15 01:46:28.894815452 +0100
+@@ -41,7 +41,7 @@
+ 	env CC="$(LIBTOOL) --mode=compile $(CC)" \
  	    LD="$(LIBTOOL) --mode=link $(CC)" \
  	    CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" \
- 	        gtkdoc-scanobj --module=$(DOC_MODULE) \
-+			--nogtkinit \
+-	        gtkdoc-scanobj --module=$(DOC_MODULE) \
++	        true gtkdoc-scanobj --module=$(DOC_MODULE) \
  	                --types=$(srcdir)/$(DOC_MODULE).types \
  	                --output-dir=$(srcdir)
  	cd $(srcdir) \
